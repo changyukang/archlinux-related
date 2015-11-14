@@ -1,12 +1,10 @@
 # Archlinux-related
->>On the way
->>created at 2015-7-11
+On the way
 
-##Include:
+# Include:
 * dotfiles
-* oh-my-zsh
-* zshrc
-* vimrc
+* vimrc:vim
 * exVim
 * xinitrc
 * dir_colors
+* zshrc:oh-my-zsh
