@@ -26,7 +26,11 @@ On the way
 
 ## exVim
 * 安装exVim，与原来自定义Vim环境不冲突；
+<<<<<<< Updated upstream
 * 配置exVim为系统命令，可以通过exVim 的形式,一键打开exVim，并自动进入指定的工程目录；
+=======
+* 配置exVim为系统命令，可以通过exVim+*.exvim工程文件的形式,一键打开exVim，并自动进入指定的工程目录；
+>>>>>>> Stashed changes
 * 关闭exVim，即恢复系统配置，不影响原来自定义Vim环境的使用。
 ![exVim IDE](http://7xoae4.com1.z0.glb.clouddn.com/exVim1.jpg)
 
