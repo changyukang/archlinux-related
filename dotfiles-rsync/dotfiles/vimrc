@@ -1,4 +1,13 @@
 ﻿" a.by kcy
+" a.设置编码格式
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set encoding=utf-8
+" 下面三个是Windows下的设置，设置屏幕显示的时候不乱码,即在Windows下这5行设置都要。
+"set termencoding=cp936
+"set langmenu=zh_CN.UTF-8
+"language messages zh_CN.UTF-8
+" e.设置编码格式
+
 " 函数设置
 " MySys()
 function! MySys()
@@ -12,6 +21,7 @@ function! MySys()
 endfunction
 
 " a.basic configure,插件无关配置
+syntax on "设置语法高亮
 set number
 set laststatus=0
 "set backspace=2 "退格键可用

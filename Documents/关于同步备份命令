@@ -1,0 +1,2 @@
+﻿在zshrc中配置了rsync的命令，用于备份dotfiles和document,具体可以查看.zshrc,看命令做了什么，以后备份时执行对应命令即可。
+
