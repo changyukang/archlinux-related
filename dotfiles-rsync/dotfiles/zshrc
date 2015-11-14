@@ -1,0 +1,172 @@
+# Path to your oh-my-zsh installation.
+export ZSH=~/.oh-my-zsh
+
+# Set name of the theme to load.
+# Look in ~/.oh-my-zsh/themes/
+# Optionally, if you set this to "random", it'll load a random theme each
+# time that oh-my-zsh is loaded.
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="blinks"
+#ZSH_THEME="fishy"
+#ZSH_THEME="maran"
+ZSH_THEME="wezm+"
+
+# a. by kcy,替代oh-my-zsh中主题设置，另加一些快捷键
+# 使用方法：先用上面设置一个theme，然后注释掉(可能不能注释掉)，再用下面的自己的solarized风格
+# some more ls aliases
+alias ls='ls --color=auto'
+#ls终端solarized配色
+export TERM=xterm-256color
+eval `dircolors ~/.dir_colors/dircolors.256dark`
+
+#由于上面ls已经支持颜色显示，下面只是使用ls进行的扩展，所以不需要再加color参数
+alias ll='ls -l'    #列表形式
+alias la='ls -A'    #不显示.和..
+alias lla='ls -lA'  #列表形式不显示.和..
+alias l='ls -CFhlt'    #文件和文件夹区分开
+alias lA='ls -CFhltA'    #文件和文件夹区分开
+alias lh='ls -hl'   #列表形式，以KB为单位显示文件大小
+alias lht='ls -hlt' #同上，增加按时间排序
+
+#定义rsync同步命令
+#同步~/my-linux/dotfiles到~/my-linux.bak/my-linux.dotfiles.bak
+#1.-a=-rlptgoD; 2.-P==--partial --progress,partial是断点续传，不然后删掉重传; 3.-i用于查看源和目的文件之间的改变情况; 4.-t参数使得rsync比较聪明，会将时间和大小相同的排除掉，可以替换为-I,使得即使时间和大小相同，也去挨个文件比较，结果是modify时间会改变; 5.--deleted，镜像模式，要与-r配合使用; 6.-n参数，是将修改列出来，不实际进行同步。
+alias rsyncdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-linux.bak/my-linux.dotfiles.bak/dotfiles-rsync'
+alias rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync'
+alias rsyncgitdocument='rsync -auvrtzopgiP --progress --delete ~/my-linux.bak/Documents ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/'
+
+##zsh显示路径风格
+#autoload -U promptinit
+#promptinit
+## This will set the default prompt to the theme
+##prompt fade white
+##prompt fire
+##prompt suse
+#prompt redhat
+##prompt adam2
+#
+##命令提示和补全
+#autoload -U compinit
+#compinit
+#zstyle ':completion:*' menu select
+#setopt completealiases
+#
+##历史类似操作查看
+#bindkey "^[[A" history-search-backward
+#bindkey "^[[B" history-search-forward
+#
+## 历史纪录条目数量 
+#export HISTSIZE=10000
+## 注销后保存的历史纪录条目数量 
+#export SAVEHIST=10000
+## 历史纪录文件 
+#export HISTFILE=~/.zhistory
+## 以附加的方式写入历史纪录 
+#setopt INC_APPEND_HISTORY
+## 如果连续输入的命令相同 ， 历史纪录中只保留一个 
+#setopt HIST_IGNORE_DUPS      
+## 为历史纪录中的命令添加时间戳       
+#setopt EXTENDED_HISTORY
+## cd自动推目录到堆叠，启用cd命令的历史纪录 ，cd -[TAB] 进入历史路径 
+#setopt AUTO_PUSHD
+## 相同的历史路径只保留一个,不要设这个，这个父目录不推等于完全没保存到
+##setopt PUSHD_IGNORE_DUPS
+## 免打cd直接进入目录
+##setopt autocd
+## 可以进到变数目录
+#setopt cdablevars
+## 而且pushd的时候不回显
+##setopt pushdsilent
+
+#快速进入频繁访问的目录z.sh,按老方法切换目录一阵,以便z.sh能够知道哪些目录是最常用的;用z -l命令或z即可列出历史上你访问各个目录的频率了;用z regex 命令即可进入你频繁访问的目录
+source ~/my-linux/dotfiles/z/z.sh
+# e. by kcy
+
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
+plugins=(git)
+
+# User configuration
+
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl"
+# export MANPATH="/usr/local/man:$MANPATH"
+
+source $ZSH/oh-my-zsh.sh
+
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# ssh
+# export SSH_KEY_PATH="~/.ssh/dsa_id"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# a. by kcy. other configure 
+alias crontab='crontab -i' #避免crontab进入然后ctrl_d结果清除所有内容的杯具
+#alias sudo='sudo ' 
+alias rm='rm -i' 
+alias mv='mv -i'
+
+# a.编译安装vim，默认安装目录为/opt
+PATH=/opt/bin:$PATH
+export PATH 
+alias vi='vim' 
+# e.编译安装vim

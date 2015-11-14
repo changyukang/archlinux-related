@@ -1,0 +1,5 @@
+﻿1.autoload是安装pathogen时产生的
+2.bundle是安装vundle时产生的
+3.my-sh-folder是个人脚本存储
+4.vim是使用dotfiles管理后的链接文件
+5.macros/syntax/doc是安装gdb功能拷贝过来的

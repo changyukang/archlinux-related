@@ -1,0 +1,44 @@
+﻿#pacman
+1.vim
+2.ctag
+3.cscope
+4.git
+5.zsh
+6.samba
+7.firefox
+8.fcitx
+9.curl
+10.npm
+11.meld
+12.diffuse
+13.colordiff
+14.ack
+15.emacs
+16.gdb
+17.cmake
+18.clang
+19.llvm
+20.clang-tools-extra
+21.autoconf
+22.tmux
+
+#yaourt
+1.bower,安装不成功，yaourt安装bower-git时有问题
+2.remarkable "Markdown编辑预览工具
+3.retext "Markdown编辑预览工具
+4.Cmd Markdown "Markdown编辑预览工具，未安装
+5.ccglue "cctree依赖ccgule
+6.sh-tools
+7.Idutils
+
+#git
+1.Markdown Plus,还未安装，因为需要先安装bower，但是yaourt安装bower-git时有问题
+2.dir_color ls命令显示配色，可选solarized等
+3.oh-my-zsh https://raw.github.com/robbyrussell/oh-my-zsh "选择喜欢的主题，这里我选择的是wezm+,配合12中的dir_color显示颜色
+
+#编译pkg
+1.yaourt
+
+#编译源码
+1.vim7.4，支持gdb功能,软件默认安装在/opt目录下,配合vimgdb补丁，同时需要系统安装gdb程序;安装youcompleteme插件需要python2.7.10支持，所以可能也需要编译vim，把gdb和+python合在一起.
+

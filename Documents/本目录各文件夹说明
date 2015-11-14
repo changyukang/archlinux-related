@@ -1,0 +1,5 @@
+﻿上层目录即~目录下的my-linux是使用dotfiles管理的系统及用户配置文件.
+
+1.本目录下的my-linux.bak是系统没有使用dotfiles管理之前的配置文件，基本上都是.开头的隐藏文件或目录,恢复时应放在~目录下.
+2.本目录下的my-linux.dotfiles.bak是系统使用dotfiles管理后的配置文件,恢复时放在~/my-linux目录下.
+3.本目录下的my-linux-dotfiles.git.bak是系统使用dotfiles管理后，并且托管到GitHub后的配置文件,恢复时目录同2.

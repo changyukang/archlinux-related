@@ -1,0 +1,5 @@
+let g:exvim_custom_path='~/exVim'
+source ~/exVim/.vimrc
+
+"退出vim时,恢复~/.vimrc连接
+autocmd VimLeave * exec "!rm -f ~/.vimrc" | exec "!ln -s ~/my-linux/dotfiles/vimrc ~/.vimrc"

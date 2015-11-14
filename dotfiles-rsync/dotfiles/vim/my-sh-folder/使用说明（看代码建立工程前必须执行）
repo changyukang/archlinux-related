@@ -1,0 +1,21 @@
+﻿1.cscope.sh用于生成cscope.out等文件，记录符号表，以方便其他插件使用和函数跳转
+2.ctaglist4lookupfile.sh用于生成filenametaglist,用于lookfiles查找文件
+注：上面两个都要在项目工程顶级目录运行，打开代码源文件时会自动往上级目录遍历查找并加载
+
+3.YCM插件，需要在项目顶级目录（含有Makefile）,运行YCM_Generator提供的功能，生成.ycm_extra_conf.py，以便跳转
+4.CCTree插件，需要加载1中生成的cscope.out，以便得到函数等前后多级调用的关系,加载cscope.out比较慢，可以使用ccgule生成交叉索引数据库ccgule.out
+  这个插件在需要时再打开.vimrc中的注释
+5.这里仅对自己配置的vim,exVim不适用
+
+
+补充：
+
+函数跳转，找寻定义和声明以及找寻局部变量定义，可以使用YCM，快捷键：\jd,其它可以查看.vimrc中该插件快捷键配置.
+
+查找调用函数处，使用cscope，配合CtrlP和CtrlSF.
+
+使用Ctrl-funky,不需要cscope配合就能查看该文件中的函数列表，快捷键：\fu
+
+查找文件，使用ack.vim、lookupfile、CtrlPCtrlSF等
+
+查看工程目录和文件，使用Nerdtree,Project等
