@@ -1,6 +1,6 @@
 [submodule "dotfiles-rsync/dotfiles/oh-my-zsh"]
 	path = dotfiles-rsync/dotfiles/oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
+	url = git@github.com:changyukang/oh-my-zsh.git
 [submodule "dotfiles-rsync/dotfiles/z"]
 	path = dotfiles-rsync/dotfiles/z
-	url = https://github.com/rupa/z.git 
+	url = git@github.com:changyukang/z.git
