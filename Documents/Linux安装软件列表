@@ -21,6 +21,13 @@
 20.clang-tools-extra
 21.autoconf
 22.tmux
+23.smplayer
+24.w3m
+25.moc: 字符界面音乐播放器,有字符界面列表
+26.sox: 音乐播放器，无列表，仅命令
+27.fbterm: 虚拟终端，支持显示中文
+28.p7zip: 7z解压
+
 
 #yaourt
 1.bower,安装不成功，yaourt安装bower-git时有问题
@@ -41,4 +48,4 @@
 
 #编译源码
 1.vim7.4，支持gdb功能,软件默认安装在/opt目录下,配合vimgdb补丁，同时需要系统安装gdb程序;安装youcompleteme插件需要python2.7.10支持，所以可能也需要编译vim，把gdb和+python合在一起.
-
+2.yong: 小小输入法

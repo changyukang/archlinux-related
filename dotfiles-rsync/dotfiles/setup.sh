@@ -2,12 +2,25 @@
 #使用说明：恢复dotfiles软连接
 
 # Shell相关
-# zsh
+#1.zsh
 ln -s ~/my-linux/dotfiles/zshrc ~/.zshrc
-#如果使用了om-my-zsh的话
+
+#2.如果使用了om-my-zsh的话
 ln -s ~/my-linux/dotfiles/oh-my-zsh/ ~/.oh-my-zsh
 
-# dir_colors, ls显示颜色, 部分设置在类.zshrc中
+#3.z的安装，直接在所用的shell配置文件中定位即可，不需将其链接到~目录
+# 在zshrc中加入：source ~/my-linux/dotfiles/z/z.sh
+
+#4.安装在虚拟终端下可以显示中文的fbterm
+ln -s ~/my-linux/dotfiles/fbtermrc ~/.fbtermrc
+
+#5.安装在虚拟终端下可以显示中文的fbterm所用的小小输入法
+# 因为输入法不是通过包管理器安装，并且安装后有些配置修改，所以将程序文件一并备份
+# 通过包管理器安装的并且程序安装目录内文件没有修改的，不必备份，只需备份配置文件
+ln -s ~/my-linux/dotfiles/yong/ /usr/local/yong 
+ln -s ~/my-linux/dotfiles/yong_config/ ~/.yong
+
+#6.dir_colors, ls显示颜色, 部分设置在类.zshrc中
 ln -s ~/my-linux/dotfiles/dir_colors ~/.dir_colors
 
 
