@@ -23,6 +23,9 @@ ln -s ~/my-linux/dotfiles/yong_config/ ~/.yong
 #6.dir_colors, ls显示颜色, 部分设置在类.zshrc中
 ln -s ~/my-linux/dotfiles/dir_colors ~/.dir_colors
 
+#7.tmux设置
+ln -s ~/my-linux/dotfiles/tmux.conf ~/.tmux.conf
+
 
 # 软件相关
 # vim

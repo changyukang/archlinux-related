@@ -183,8 +183,9 @@ Plugin 'dietsche/vim-lastplace' "Intelligently reopen files where you left off. 
 "Plugin 'FromtonRouge/OmniCppComplete'
 "Plugin 'c.vim'
 "Plugin 'andyxsv5/code_complete.vim' "类似c.vim
-Plugin 'vim-scripts/VimIM'
 " end 代码自动补全，暂使用YCM代替
+Plugin 'benmills/vimux'
+Plugin 'vim-scripts/VimIM'
 if MySys()=="unix"
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'rdnetto/YCM-Generator' "生成.ycm_extra_conf.py，使用方法：见网页插件使用说明

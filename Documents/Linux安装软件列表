@@ -38,13 +38,16 @@
 5.ccglue "cctree依赖ccgule
 6.sh-tools
 7.Idutils
+8.beediff
+9.cwdiff   wdiff的color版本
+10.dwdiff  wdiff的前端
 
 #git
 1.Markdown Plus,还未安装，因为需要先安装bower，但是yaourt安装bower-git时有问题
 2.dir_color ls命令显示配色，可选solarized等
 3.oh-my-zsh https://raw.github.com/robbyrussell/oh-my-zsh "选择喜欢的主题，这里我选择的是wezm+,配合12中的dir_color显示颜色
 
-#编译pkg
+#编译pkg,makepkg
 1.yaourt
 
 #编译源码

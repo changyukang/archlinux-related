@@ -170,3 +170,17 @@ PATH=/opt/bin:$PATH
 export PATH 
 alias vi='vim' 
 # e.编译安装vim
+
+# a.zsh支持vim
+export EDITOR="vim"
+bindkey -v
+# vi style incremental search 
+bindkey '^R' history-incremental-search-backward 
+bindkey '^S' history-incremental-search-forward 
+bindkey '^P' history-search-backward 
+bindkey '^N' history-search-forward
+# e.zsh支持vim
+
+# a.进入目录不需要cd
+setopt AUTO_CD
+# e.进入目录不需要cd
