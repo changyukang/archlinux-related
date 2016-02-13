@@ -55,7 +55,10 @@ export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
 export XMODIFIERS="@im=fcitx"
 #a.kcy, for startx substitute for startxfce4
-exec startxfce4
+#exec startxfce4
+#exec fvwm
+#fcitx& #也可以在awesome配置文件rc.lua中进行配置
+exec awesome
 
 xclock -geometry 50x50-1+1 &
 xterm -geometry 80x50+494+51 &

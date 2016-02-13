@@ -28,6 +28,13 @@
 27.fbterm: 虚拟终端，支持显示中文
 28.p7zip: 7z解压
 29.fbida: 命令行下图片、pdf查看
+30.fvwm: 未配置，配置文件为~/.fvwm/.fvwm2rc
+31.awesome
+32.pcmanfm: 资源管理器
+33.volwheel: 音量调节,用于awesome中
+34.xcompmgr:
+35.devilspie:透明效果是通过xcompmgr、transset-df与devilspie这三个小工具实现的
+36.transset-df
 
 
 #yaourt
@@ -38,9 +45,9 @@
 5.ccglue "cctree依赖ccgule
 6.sh-tools
 7.Idutils
-8.beediff
-9.cwdiff   wdiff的color版本,安装未成功
-10.dwdiff  wdiff的前端
+8.cwdiff   wdiff的color版本,安装的cwdiff.git版本
+9.dwdiff  wdiff的前端
+10.downgrade 降级安装的软件
 
 #git
 1.Markdown Plus,还未安装，因为需要先安装bower，但是yaourt安装bower-git时有问题

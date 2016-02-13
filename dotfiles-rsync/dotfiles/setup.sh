@@ -43,3 +43,9 @@ ln -s ~/my-linux/dotfiles/vim/my-sh-folder/run_exVim.sh /usr/bin/exVim
 # 系统相关
 # xorg、xfce
 ln -s ~/my-linux/dotfiles/xinitrc ~/.xinitrc
+# xterm
+ln -s ~/my-linux/dotfiles/Xresources ~/.Xresources
+# awesome
+cd ~/.config
+mkdir awesome
+ln -s ~/my-linux/dotfiles/rc.lua ~/.config/awesome/
