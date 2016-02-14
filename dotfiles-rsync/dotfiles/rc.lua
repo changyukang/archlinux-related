@@ -114,7 +114,11 @@ mymainmenu = awful.menu({ items = { { "运行终端", terminal },
 -- a.自启动的工具
 do
     local cmdss=
-    {"fcitx",   --这里也可以在.xinirc中设置
+    {
+     --"/usr/bin/vmware-tools&",   --解决vmware-tools安装后不能复制粘帖的问题
+     --"/etc/init.d/vmware-tools start&",   --解决vmware-tools安装后不能复制粘帖的问题
+     --"/etc/xdg/autostart/vmware-user.desktop&", --解决vmware-tools安装后不能复制粘帖的问题
+     "fcitx",   --这里也可以在.xinirc中设置
      "volwheel", --启动工具栏音量图标
      "xset s 0", --关闭喇叭滴滴声
      "xcompmgr", --生成应用程序边缘的阴影
@@ -138,6 +142,7 @@ client.connect_signal("unfocus", function(c)
                                 c.opacity = 0.7
                              end)
 
+-- 这里的设置使得未激活的窗口透明显示，另外在.xinirc中的配置使得对于所有窗口透明，还可以想法设置只让xterm透明
 -- e.透明设置
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,

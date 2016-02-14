@@ -58,6 +58,15 @@ export XMODIFIERS="@im=fcitx"
 #exec startxfce4
 #exec fvwm
 #fcitx& #也可以在awesome配置文件rc.lua中进行配置
+# a.设置透明,所有的都透明，如何只让xterm透明呢
+#其它透明设置在rc.lua中
+echo '(spawn_async (str "transset-df 0.8 -i" (window_xid)))' > /tmp/devilspie.ds
+xcompmgr -C -c -F -f -r8 & devilspie /tmp/devilspie.ds &
+# e.设置透明
+# a.虚拟机安装vmware-tools后不能拷贝粘帖和自动适应窗口大小问题
+#/usr/bin/vmware-user&
+#/etc/xdg/autostart/vmware-user.desktop
+# e.虚拟机问题
 exec awesome
 
 xclock -geometry 50x50-1+1 &
