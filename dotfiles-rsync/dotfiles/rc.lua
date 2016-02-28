@@ -114,7 +114,11 @@ mymainmenu = awful.menu({ items = { { "运行终端", terminal },
 -- a.自启动的工具
 do
     local cmdss=
-    {"fcitx",   --这里也可以在.xinirc中设置
+    {
+     --"/usr/bin/vmware-tools&",   --解决vmware-tools安装后不能复制粘帖的问题
+     --"/etc/init.d/vmware-tools start&",   --解决vmware-tools安装后不能复制粘帖的问题
+     --"/etc/xdg/autostart/vmware-user.desktop&", --解决vmware-tools安装后不能复制粘帖的问题
+     "fcitx",   --这里也可以在.xinirc中设置
      "volwheel", --启动工具栏音量图标
      "xset s 0", --关闭喇叭滴滴声
      "xcompmgr", --生成应用程序边缘的阴影
