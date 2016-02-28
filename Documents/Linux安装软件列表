@@ -35,6 +35,7 @@
 34.xcompmgr:
 35.devilspie:透明效果是通过xcompmgr、transset-df与devilspie这三个小工具实现的
 36.transset-df
+37.stow: 包管理器，主要是tar包
 
 
 #yaourt

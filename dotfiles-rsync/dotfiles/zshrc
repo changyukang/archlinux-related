@@ -166,6 +166,7 @@ alias rm='rm -i'
 alias mv='mv -i'
 
 # a.编译安装vim，默认安装目录为/opt
+# 这里可以考虑使用stow安装自编译的vim
 PATH=/opt/bin:$PATH
 export PATH 
 alias vi='vim' 

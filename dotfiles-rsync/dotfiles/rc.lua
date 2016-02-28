@@ -55,11 +55,11 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
+    awful.layout.suit.tile.top,
     awful.layout.suit.floating,
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
-    awful.layout.suit.tile.top,
     awful.layout.suit.fair,
     awful.layout.suit.fair.horizontal,
     awful.layout.suit.spiral,
@@ -138,6 +138,7 @@ client.connect_signal("unfocus", function(c)
                                 c.opacity = 0.7
                              end)
 
+-- 这里的设置使得未激活的窗口透明显示，另外在.xinirc中的配置使得对于所有窗口透明，还可以想法设置只让xterm透明
 -- e.透明设置
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,

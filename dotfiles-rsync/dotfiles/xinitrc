@@ -58,6 +58,10 @@ export XMODIFIERS="@im=fcitx"
 #exec startxfce4
 #exec fvwm
 #fcitx& #也可以在awesome配置文件rc.lua中进行配置
+#设置透明,所有的都透明，如何只让xterm透明呢
+#其它透明设置在rc.lua中
+echo '(spawn_async (str "transset-df 0.8 -i" (window_xid)))' > /tmp/devilspie.ds
+xcompmgr -C -c -F -f -r8 & devilspie /tmp/devilspie.ds &
 exec awesome
 
 xclock -geometry 50x50-1+1 &
