@@ -23,11 +23,11 @@
 22.tmux
 23.smplayer
 24.w3m
-25.moc: 字符界面音乐播放器,有字符界面列表
-26.sox: 音乐播放器，无列表，仅命令
-27.fbterm: 虚拟终端，支持显示中文
+25.moc: 字符界面音乐播放器,有字符界面列表,命令是mocp
+26.sox: 音乐播放器，无列表，仅命令,使用方法：play + music_name
+27.fbterm: 虚拟终端，支持显示中文,用于进入X之前
 28.p7zip: 7z解压
-29.fbida: 命令行下图片、pdf查看
+29.fbida: 命令行下图片、pdf查看,命令为fbi，只能在进入x前使用
 30.fvwm: 未配置，配置文件为~/.fvwm/.fvwm2rc
 31.awesome
 32.pcmanfm: 资源管理器
