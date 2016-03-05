@@ -42,7 +42,7 @@ ln -s $DOTFILES_PATH/vim/my-sh-folder/run_exVim.sh /usr/bin/exVim
 #ln -s $DOTFILES_PATH/emacs.d/ ~/.emacs.d
 
 #moc
-ln -s $DOTFILES_PATH/moc/config ~/.moc/
+ln -s $DOTFILES_PATH/moc/config ~/.moc/config
 
 
 # 系统相关
