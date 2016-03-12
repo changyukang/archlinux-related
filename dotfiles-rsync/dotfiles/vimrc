@@ -39,23 +39,34 @@ noremap <Right> <Nop>
 " a. 设置插入模式下打键绑定，类似emacs，主要为了解决插入模式移动光标问题
 " 模拟 Emacs 键绑定
 " Move
-inoremap <C-a> <Home> "光标移动至行首
-inoremap <C-e> <End> "光标移动至行尾
+"光标移动至行首
+inoremap <C-a> <Home>
+"光标移动至行尾
+inoremap <C-e> <End>
 " 这里主要是不经常用，另外跟自动补全的选择冲突
 "inoremap <C-p> <Up>
 "inoremap <C-n> <Down>
-inoremap <C-b> <Left> "往前移动光标
-inoremap <C-f> <Right> "往后移动光标
-inoremap <M-b> <C-o>b "插入模式Ctrl+o暂时回到normal模式，之后执行b命令
-inoremap <M-f> <C-o>w "插入模式Ctrl+o暂时回到normal模式，之后执行w命令
+"往前移动光标
+inoremap <C-b> <Left>
+"往后移动光标
+inoremap <C-f> <Right>
+"插入模式Ctrl+o暂时回到normal模式，之后执行b命令
+inoremap <M-b> <C-o>b
+"插入模式Ctrl+o暂时回到normal模式，之后执行w命令
+inoremap <M-f> <C-o>w
 " Rubout word / line and enter insert mode
 " use <Esc><Right> instead of <C-o>
-inoremap <C-w> <Esc>dbcl "删除空格及前面的单词
+"删除空格及前面的单词
+inoremap <C-w> <Esc>dbcl
 " delete
-inoremap <C-u> <Esc>d0cl "删除至行首
-inoremap <C-k> <Esc><Right>C "删除至行尾
-inoremap <C-d> <Esc><Right>s "删除当前光标处字符
-inoremap <M-d> <C-o>de "插入模式Ctrl+o暂时回到normal模式，之后执行de命令
+"删除至行首
+inoremap <C-u> <Esc>d0cl
+"删除至行尾
+inoremap <C-k> <Esc><Right>C
+"删除当前光标处字符
+inoremap <C-d> <Esc><Right>s
+"插入模式Ctrl+o暂时回到normal模式，之后执行de命令
+inoremap <M-d> <C-o>de
 " e. 设置插入模式下打键绑定，类似emacs，主要为了解决插入模式移动光标问题
 
 set encoding=utf-8 " 设置默认编码
@@ -197,12 +208,12 @@ Plugin 'lookupfile' "authored by Hari Krishna Dara
 "Plugin 'arkaragian/Project.vim' "support for projects and solutions in the sense that the most IDE's do.
 Plugin 'vimplugin/project.vim' "The list of files will be displayed in a window on the left side of the Vim window, and you can press or double-click on filenames in the list to open the files. This is similar to how some IDEs I've used work. 
 Plugin 'dietsche/vim-lastplace' "Intelligently reopen files where you left off. By default git, svn, and mercurial commit messages are ignored.
-"Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 " begin 代码自动补全，暂使用YCM代替,快速输入各种控制语句、头文件、注释等等，还需要下面插件配合
-Plugin 'vim-scripts/AutoComplPop' "自动补全 acp
-Plugin 'vimcn/acp.vim.cnx'        "acp的帮助文档
+"Plugin 'vim-scripts/AutoComplPop' "自动补全 acp
+"Plugin 'vimcn/acp.vim.cnx'        "acp的帮助文档
 "Plugin 'OmniCppComplete'
-Plugin 'FromtonRouge/OmniCppComplete'
+"Plugin 'FromtonRouge/OmniCppComplete'
 "Plugin 'c.vim'
 "Plugin 'andyxsv5/code_complete.vim' "类似c.vim
 " end 代码自动补全，暂使用YCM代替
@@ -554,17 +565,17 @@ nmap <silent> <C-k><C-v> :bel 20vsplit gdb-variables<cr>
 "使用方法总结：调试某个可执行文件时，可能需要在某个源码文件中打断点，此时不要使用:e filename的方式，而是使用:tabedit filename的方式，不然会导致程序运行时打开的文件新开一个窗口.
 " e.vimgdb
 
-" begin 代码自动补全，暂用YCM代替,这里为了普通文本也能补全，所以加上acp
-" a.autocomplpop(acp.vim)
-" 依赖L9
-" a.补全增强，正常autocomplpop是按字典进行补全的，只有你输入过的单词才可以补全。第一次想要自动补全必须用CTRL+X或CTRL+O来补全。下面的代码可以增强一下自动补全功能
-let g:AutoComplPop_Behavior = {
-\ 'c': [ {'command' : "\\",
-\ 'pattern' : ".",
-\ 'repeat' : 0}
-\ ]
-\}
-" e.补全增强
+" begin 代码自动补全，暂用YCM代替
+"" a.autocomplpop(acp.vim)
+"" 依赖L9
+"" a.补全增强，正常autocomplpop是按字典进行补全的，只有你输入过的单词才可以补全。第一次想要自动补全必须用CTRL+X或CTRL+O来补全。下面的代码可以增强一下自动补全功能
+"let g:AutoComplPop_Behavior = {
+"\ 'c': [ {'command' : "\\",
+"\ 'pattern' : ".",
+"\ 'repeat' : 0}
+"\ ]
+"\}
+"" e.补全增强
 "" a.Php补全,再就是这个插件(acp.Vim)默认是没有设置php自动补全的,可以设置一个PHP函数字典,让其根据字典的内容进行自动补全,暂时字典没有设置。
 "if !exists('g:AutoComplPop_Behavior')
 "let g:AutoComplPop_Behavior = {}
@@ -604,21 +615,24 @@ let g:AutoComplPop_Behavior = {
 " new-omni-completion "非插件,VIM自带
 "关掉自动补全预览窗口
 set completeopt=longest,menu
+" 补全技巧
+" 在输入汉字时，按住C-X C-I，将从上文中搜索是否出现过类似的;
+" 当想输入目录时，可以把起始目录（可以是一部分）打出来，然后C-X C-F，将会在这里搜索目录下有什么，方便路径输入
 
-" a.SuperTab,使用YCM的话，应该不再需要SuperTab
+" a.SuperTab, 用于omni方式补全，omni有多种方式，superTab可以记录最后一次选择，以后按Tab即可使用该方式补全
 " 加速你的补全 -- 插件: SuperTab,配合new-omni-completion
-"let g:SuperTabDefaultCompletionType="context"
-"let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-" 设置按下<Tab>后默认的补全方式, 默认是<C-P>, 
-" " 现在改为<C-X><C-O>. 关于<C-P>的补全方式, 
-" " 还有其他的补全方式, 你可以看看下面的一些帮助:
-" " :help ins-completion
-" " :help compl-omni 
-"let g:SuperTabRetainCompletionType=2
-" " 0 - 不记录上次的补全方式
-" " 1 - 记住上次的补全方式,直到用其他的补全命令改变它
-" " 2 - 记住上次的补全方式,直到按ESC退出插入模式为止
-"存在一个问题，现在<Tab>键不好用了, 我以前爱用<Tab>进行缩进,
+let g:SuperTabDefaultCompletionType="context"
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+ " 设置按下<Tab>后默认的补全方式, 默认是<C-P>, 
+ " 现在改为<C-X><C-O>. 关于<C-P>的补全方式, 
+ " 还有其他的补全方式, 你可以看看下面的一些帮助:
+ " :help ins-completion
+ " :help compl-omni 
+let g:SuperTabRetainCompletionType=2
+ " 0 - 不记录上次的补全方式
+ " 1 - 记住上次的补全方式,直到用其他的补全命令改变它
+ " 2 - 记住上次的补全方式,直到按ESC退出插入模式为止
+"存在一个问题(应该不存在)，现在<Tab>键不好用了, 我以前爱用<Tab>进行缩进,
 "如果前面有字符按下<Tab>键后就会进行补全, 而不是我想要的缩进功能,
 "不知道有没有快捷键可以暂时关闭和激活SuperTab键的功能
 " e.SuperTab
@@ -654,6 +668,8 @@ let g:syntastic_enable_balloons = 1
 """"""""""""YCM""""""""""""""""""""
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 "指定python解释其为python2
+"当多次打开关闭时，可能会打开好多python进程，导致占用内存过大，系统卡顿，此时需要pkill -9 python，将进程关闭，以释放内存
+"这个问题可以尝试把这里打解释器指定去掉，把系统打默认python版本设置为python2，待验证，这样可能就不会启动那么多python进程了。
 let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_collect_identifiers_from_tags_files = 1
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
