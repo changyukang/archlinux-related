@@ -36,6 +36,8 @@
 35.devilspie:透明效果是通过xcompmgr、transset-df与devilspie这三个小工具实现的
 36.transset-df
 37.stow: 包管理器，主要是tar包
+38.pip: python2-pip/python-pip,python包的推荐安装工具,这里使用它安装了vim gdb调试工具pyclewn。
+        ------ pyclewn: vim gdb调试工具
 
 
 #yaourt
@@ -59,5 +61,5 @@
 1.yaourt
 
 #编译源码
-1.vim7.4，支持gdb功能,软件默认安装在/opt目录下,配合vimgdb补丁，同时需要系统安装gdb程序;安装youcompleteme插件需要python2.7.10支持，所以可能也需要编译vim，把gdb和+python合在一起.
+#1.vim7.4，支持gdb功能,软件默认安装在/opt目录下,配合vimgdb补丁，同时需要系统安装gdb程序;安装youcompleteme插件需要python2.7.10支持，所以可能也需要编译vim，把gdb和+python合在一起.
 2.yong: 小小输入法

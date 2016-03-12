@@ -23,8 +23,8 @@ endfunction
 " a.basic configure,插件无关配置
 syntax on "设置语法高亮
 set number
-set laststatus=0
-"set backspace=2 "退格键可用
+"set laststatus=0
+set backspace=2 "退格键可用
 set backspace=indent,eol,start
 "set whichwrap+=h,l "设置可以移出当前行,默认使用backspace和space,该功能不推荐设置hl,见:help whichwrap
 
@@ -364,6 +364,8 @@ set cscopeverbose
 " e.cscope
 
 " a.minibufexpl,以下设置暂时似乎没用
+let g:miniBufExplorerAutoStart = 1
+"let g:miniBufExplorerAutoStart = 0
 " 删除buffer,使用d.
 " <C-Tab> 向前循环切换,<C-S-Tab> 向后循环切换到每个buffer上,并在但前窗口打开
 let g:miniBufExplMapCTabSwitchBufs = 1
@@ -464,6 +466,7 @@ let g:vim_markdown_math=1         "LaTeX math
 
 " a.vim-powerline
 set laststatus=2 "始终显示状态栏
+"set laststatus=0 "不显示状态栏
 set statusline+=%{fugitive#statusline()}  "Git Hotness,显示git，需要配合fugitive使用
 " e.vim-powerline
 
@@ -564,6 +567,12 @@ nmap <silent> <C-k><C-v> :bel 20vsplit gdb-variables<cr>
 
 "使用方法总结：调试某个可执行文件时，可能需要在某个源码文件中打断点，此时不要使用:e filename的方式，而是使用:tabedit filename的方式，不然会导致程序运行时打开的文件新开一个窗口.
 " e.vimgdb
+
+" a.pyclewn 不需要编译vim就可以支持gdb
+" 显示启动信息，方便定位启动错误
+" 启动需要分割窗口，水平分割是有限制的，所以要把minibufexplorer和powerline的显示关闭，再启动pyclewn.
+let g:pyclewn_terminal="xterm, -e"
+" e.pyclewn 不需要编译vim就可以支持gdb
 
 " begin 代码自动补全，暂用YCM代替
 "" a.autocomplpop(acp.vim)
