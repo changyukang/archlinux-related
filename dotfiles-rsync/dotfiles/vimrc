@@ -36,6 +36,28 @@ noremap <Down> <Nop>
 noremap <Left> <Nop> 
 noremap <Right> <Nop>
 
+" a. 设置插入模式下打键绑定，类似emacs，主要为了解决插入模式移动光标问题
+" 模拟 Emacs 键绑定
+" Move
+inoremap <C-a> <Home> "光标移动至行首
+inoremap <C-e> <End> "光标移动至行尾
+" 这里主要是不经常用，另外跟自动补全的选择冲突
+"inoremap <C-p> <Up>
+"inoremap <C-n> <Down>
+inoremap <C-b> <Left> "往前移动光标
+inoremap <C-f> <Right> "往后移动光标
+inoremap <M-b> <C-o>b "插入模式Ctrl+o暂时回到normal模式，之后执行b命令
+inoremap <M-f> <C-o>w "插入模式Ctrl+o暂时回到normal模式，之后执行w命令
+" Rubout word / line and enter insert mode
+" use <Esc><Right> instead of <C-o>
+inoremap <C-w> <Esc>dbcl "删除空格及前面的单词
+" delete
+inoremap <C-u> <Esc>d0cl "删除至行首
+inoremap <C-k> <Esc><Right>C "删除至行尾
+inoremap <C-d> <Esc><Right>s "删除当前光标处字符
+inoremap <M-d> <C-o>de "插入模式Ctrl+o暂时回到normal模式，之后执行de命令
+" e. 设置插入模式下打键绑定，类似emacs，主要为了解决插入模式移动光标问题
+
 set encoding=utf-8 " 设置默认编码
 set bomb
 
@@ -177,10 +199,10 @@ Plugin 'vimplugin/project.vim' "The list of files will be displayed in a window 
 Plugin 'dietsche/vim-lastplace' "Intelligently reopen files where you left off. By default git, svn, and mercurial commit messages are ignored.
 "Plugin 'ervandew/supertab'
 " begin 代码自动补全，暂使用YCM代替,快速输入各种控制语句、头文件、注释等等，还需要下面插件配合
-"Plugin 'vim-scripts/AutoComplPop' "自动补全 acp
-"Plugin 'vimcn/acp.vim.cnx'        "acp的帮助文档
-""Plugin 'OmniCppComplete'
-"Plugin 'FromtonRouge/OmniCppComplete'
+Plugin 'vim-scripts/AutoComplPop' "自动补全 acp
+Plugin 'vimcn/acp.vim.cnx'        "acp的帮助文档
+"Plugin 'OmniCppComplete'
+Plugin 'FromtonRouge/OmniCppComplete'
 "Plugin 'c.vim'
 "Plugin 'andyxsv5/code_complete.vim' "类似c.vim
 " end 代码自动补全，暂使用YCM代替
@@ -193,7 +215,7 @@ if MySys()=="unix"
     "Plugin 'honza/vim-snippets'
 endif
 
-"Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
+Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
 
 "Plugin 'xolox/vim-shell'
 "Plugin 'xolox/vim-misc'
@@ -532,17 +554,17 @@ nmap <silent> <C-k><C-v> :bel 20vsplit gdb-variables<cr>
 "使用方法总结：调试某个可执行文件时，可能需要在某个源码文件中打断点，此时不要使用:e filename的方式，而是使用:tabedit filename的方式，不然会导致程序运行时打开的文件新开一个窗口.
 " e.vimgdb
 
-" begin 代码自动补全，暂用YCM代替
-"" a.autocomplpop(acp.vim)
-"" 依赖L9
-"" a.补全增强，正常autocomplpop是按字典进行补全的，只有你输入过的单词才可以补全。第一次想要自动补全必须用CTRL+X或CTRL+O来补全。下面的代码可以增强一下自动补全功能
-"let g:AutoComplPop_Behavior = {
-"\ 'c': [ {'command' : "\\",
-"\ 'pattern' : ".",
-"\ 'repeat' : 0}
-"\ ]
-"\}
-"" e.补全增强
+" begin 代码自动补全，暂用YCM代替,这里为了普通文本也能补全，所以加上acp
+" a.autocomplpop(acp.vim)
+" 依赖L9
+" a.补全增强，正常autocomplpop是按字典进行补全的，只有你输入过的单词才可以补全。第一次想要自动补全必须用CTRL+X或CTRL+O来补全。下面的代码可以增强一下自动补全功能
+let g:AutoComplPop_Behavior = {
+\ 'c': [ {'command' : "\\",
+\ 'pattern' : ".",
+\ 'repeat' : 0}
+\ ]
+\}
+" e.补全增强
 "" a.Php补全,再就是这个插件(acp.Vim)默认是没有设置php自动补全的,可以设置一个PHP函数字典,让其根据字典的内容进行自动补全,暂时字典没有设置。
 "if !exists('g:AutoComplPop_Behavior')
 "let g:AutoComplPop_Behavior = {}
@@ -631,6 +653,8 @@ let g:syntastic_enable_balloons = 1
 
 """"""""""""YCM""""""""""""""""""""
 "let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+"指定python解释其为python2
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2.7'
 "let g:ycm_collect_identifiers_from_tags_files = 1
 set completeopt=longest,menu    "让Vim的补全菜单行为与一般IDE一致(参考VimTip1228)
 "autocmd InsertLeave * if pumvisible() == 0|pclose|endif "离开插入模式后自动关闭预览窗口
@@ -649,10 +673,11 @@ inoremap <expr> <PageUp>   pumvisible() ? "\<PageUp>\<C-p>\<C-n>" : "\<PageUp>"
 "let g:ycm_key_list_select_completion = ['<Down>']
 "let g:ycm_key_list_previous_completion = ['<Up>']
 
-let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
-let g:ycm_cache_omnifunc=0  " 禁止缓存匹配项,每次都重新生成匹配项
-let g:ycm_seed_identifiers_with_syntax = 1
+"let g:ycm_confirm_extra_conf=0 "关闭加载.ycm_extra_conf.py提示
 let g:ycm_confirm_extra_conf = 0
+let g:ycm_cache_omnifunc=0  " 禁止缓存匹配项,每次都重新生成匹配项
+
+let g:ycm_seed_identifiers_with_syntax = 1
 "在注释输入中也能补全
 let g:ycm_complete_in_comments = 1
 "在字符串输入中也能补全
