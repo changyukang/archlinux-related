@@ -1,4 +1,7 @@
 ﻿" a.by kcy
+" 重新加载vimrc
+nmap <Leader>S :source ~/.vimrc<CR>
+
 " a.设置编码格式
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf-8
@@ -33,7 +36,7 @@ set viminfo='1000,f1,<800
 " 禁用方向键
 noremap <Up> <Nop>
 noremap <Down> <Nop>
-noremap <Left> <Nop> 
+noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " a. 设置插入模式下打键绑定，类似emacs，主要为了解决插入模式移动光标问题
@@ -85,7 +88,6 @@ set smartindent                    "智能对齐
 set showmatch                      "括号匹配模式
 set matchtime=1  "匹配括号高亮的时间（单位是十分之一秒）
 set ruler                          "显示状态行
-set incsearch                      "搜索时一边输入一边显示效果
 set tabstop=4                      "tab键为4个空格
 set expandtab                      "tab自动替换为空格，打开已有文件，可以执行:retab将tab转换为空格
 "set smarttab                       "一次回车删除一个tab宽度的空格
@@ -105,9 +107,10 @@ set ambiwidth=double               "防止特殊符号无法正常显示问题
 set textwidth=1000  "此处设置文本长度长一些，不然在输入一些文字后，再输入另外的句子或单词，会自动换行
 "此处不设置自动换行，避免代码超出屏幕宽度后不好查看
 "替代方法：使用vim的滚屏功能，zL向左滚半屏，zH向右滚半屏,两屏比较代码可以使用同步滚屏功能.详情查看：SCROLL
-set nowrap      
+set nowrap
+set list "显示行尾的空白字符,短横杠形式,vim-sensible可以使这个显示更好看一点,例如：
 "set linebreak "开启后断行可能会乱，尤其是汉语注释
-"set fo+=mB 
+"set fo+=mB
 " 显示中文帮助
 " if version >= 603
 "     set helplang=cn
@@ -131,25 +134,25 @@ syntax on
 if MySys()=="unix"
     set rtp+=~/.vim/bundle/Vundle.vim
 elseif MySys()=="win32"
-    set rtp+=$HOME/.vim/bundle/vundle/  
+    set rtp+=$HOME/.vim/bundle/vundle/
 endif
 
 "call vundle#rc()
 call vundle#begin()
 " Bundles:
-" 如果在windows下使用，设置为  
-" set rtp+=$HOME/.vim/bundle/vundle/  
-" callvundle#rc()  
-" let Vundle manage Vundle  
-" Bundle'gmarik/vundle' " required!  
-" Bundles托管插件示例  
-" 代码在github非vimscript用户下,使用github帐号/项目名，例如：  
-" Bundle 'tpope/vim-fugitive'  
-" 代码在vimscript用户下，使用插件名称，插件名字可以在  
-" http://vim-scripts.org/vim/scripts.html页面中查找，例如：   
-" Bundle 'vimwiki'  
-" 非github的插件，使用其git地址，例如：  
-" Bundle 'git://git.wincent.com/command-t.git'  
+" 如果在windows下使用，设置为
+" set rtp+=$HOME/.vim/bundle/vundle/
+" callvundle#rc()
+" let Vundle manage Vundle
+" Bundle'gmarik/vundle' " required!
+" Bundles托管插件示例
+" 代码在github非vimscript用户下,使用github帐号/项目名，例如：
+" Bundle 'tpope/vim-fugitive'
+" 代码在vimscript用户下，使用插件名称，插件名字可以在
+" http://vim-scripts.org/vim/scripts.html页面中查找，例如：
+" Bundle 'vimwiki'
+" 非github的插件，使用其git地址，例如：
+" Bundle 'git://git.wincent.com/command-t.git'
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 Plugin 'L9'
@@ -157,18 +160,23 @@ Plugin 'FuzzyFinder'
 Plugin 'rails.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'taglist.vim'
+Plugin 'majutsushi/tagbar' "据说比taglist好,需要exuberant-ctags配合
+"Plugin 'TagHighlight' "根据生成的tag文件，高亮类/变量/函数/关键字
 Plugin 'TxtBrowser'
 Plugin 'scrooloose/nerdtree'
+"Plugin 'oblitum/bufkill' "nerdtree是最后一个窗口时，不让其缩放
+Plugin 'bufkill.vim' "nerdtree是最后一个窗口时，不让其缩放
+Plugin 'vimprj' "方便管理工程相关的vim配置,可以在自己工程目录建立一个.vimprj/my.vim,这里面做些个性设置，比如tab宽度，vim启动时会source这里的配置。
+Plugin 'DfrankUtil' "vimprj依赖，a simple library.
 Plugin 'lboulard/cscope'
 Plugin 'wolfpython/cscope_map.vim'
 " Plugin 'chazy/cscope_maps'
 " Plugin 'charz/multi-cscope-db'
-" Plugin 'cscope_macros.vim' 
+" Plugin 'cscope_macros.vim'
 " Plugin 'autoload_cscope.vim'
 " Plugin 'cscope.vim'
-Plugin 'fholgado/minibufexpl.vim'
-"Plugin 'minibufexplorerpp'
-Plugin 'a.vim'
+Plugin 'fholgado/minibufexpl.vim' "vim-airline后我都不需要用minibufexpl.vim了，其自带切换buffer功能,安装vim-airline前要安装相应打过powerline补丁的字体，不然在airline状态栏上无法正常显示图标和三角形箭头符号.
+Plugin 'a.vim' "根据.c跳转到同名.h
 Plugin 'grep.vim' "authored by yegappan
 Plugin 'Visual-Mark'
 Plugin 'winmanager--Fox'  " a bug-fix version for winmanager
@@ -198,7 +206,24 @@ Plugin 'hari-rangarajan/CCTree' "类似SI的多级函数调用关系,依赖ccgul
 " end.以下几款提供SI类似功能
 Plugin 'tpope/vim-git' "配合vim-fugitive使用，使得显示信息有高亮效果
 Plugin 'tpope/vim-fugitive' "git封装，仅在编辑git库中文件时才显示。
-Plugin 'Lokaltog/vim-powerline' "状态栏显示，配合fugitive可以显示git信息
+Plugin 'tpope/vim-commentary' "注释
+Plugin 'tpope/vim-surround' "将包围字符串的双引号/括号等更换成其它的或者去掉，同时支持html标签
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-unimpaired' "让[]发挥奇效
+"Plugin 'Lokaltog/vim-powerline' "状态栏显示，配合fugitive可以显示git信息
+Plugin 'vim-airline/vim-airline' "状态栏显示,better than vim-powerline.
+Plugin 'vim-airline/vim-airline-themes'
+
+"" 支持自定义文本对象
+"Plugin 'kana/vim-textobj-user.git'
+"" 增加行文本对象: l   dal yal cil
+"Plugin 'kana/vim-textobj-line' "文本对象插件，可以操纵当前行
+"" 增加文件文本对象: e   dae yae cie
+"Plugin 'kana/vim-textobj-entire.git'
+"" 增加缩进文本对象: i   dai yai cii - 相同缩进属于同一块
+"Plugin 'kana/vim-textobj-indent.git'
+
+
 "Plugin 'scrooloose/syntastic'  "语法检查,比较烦，先关闭
 "Plugin 'easymotion/vim-easymotion' "快速跳转，类似vimoperator的f功能
 Plugin 'genutils' "authored by Hari Krishna Dara,genutils插件提供了一些通用的函数，可供其它的脚本使用
@@ -206,7 +231,7 @@ Plugin 'lookupfile' "authored by Hari Krishna Dara
 "Plugin 'dsummersl/lookupfile-grep' "an extension to the lookupfile plugin - supporting user friendly regex searching of your project files.
 "Plugin 'vim-scripts/project.vim' "This script trys to help you open a C project quickly and automatically initialize the working environment, such as creating cscope, ctags files, files_list, etc.
 "Plugin 'arkaragian/Project.vim' "support for projects and solutions in the sense that the most IDE's do.
-Plugin 'vimplugin/project.vim' "The list of files will be displayed in a window on the left side of the Vim window, and you can press or double-click on filenames in the list to open the files. This is similar to how some IDEs I've used work. 
+Plugin 'vimplugin/project.vim' "The list of files will be displayed in a window on the left side of the Vim window, and you can press or double-click on filenames in the list to open the files. This is similar to how some IDEs I've used work.
 Plugin 'dietsche/vim-lastplace' "Intelligently reopen files where you left off. By default git, svn, and mercurial commit messages are ignored.
 Plugin 'ervandew/supertab'
 " begin 代码自动补全，暂使用YCM代替,快速输入各种控制语句、头文件、注释等等，还需要下面插件配合
@@ -214,6 +239,10 @@ Plugin 'ervandew/supertab'
 "Plugin 'vimcn/acp.vim.cnx'        "acp的帮助文档
 "Plugin 'OmniCppComplete'
 "Plugin 'FromtonRouge/OmniCppComplete'
+Plugin 'shougo/neocomplcache.vim' "关键字补全，文件路径补全，tag补全
+"Plugin 'Rip-Rip/clang_complete' "C/C++补全
+"Plugin 'osyo-manga/neocomplcache-clang_complete "解决neocomplcache和clang_complete的冲突，貌似当前已废弃
+
 "Plugin 'c.vim'
 "Plugin 'andyxsv5/code_complete.vim' "类似c.vim
 " end 代码自动补全，暂使用YCM代替
@@ -222,16 +251,22 @@ Plugin 'vim-scripts/VimIM'
 if MySys()=="unix"
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'rdnetto/YCM-Generator' "生成.ycm_extra_conf.py，使用方法：见网页插件使用说明
-    "Plugin 'SirVer/ultisnips' "生成代码片段，补全功能来自YCM，与下面的vim-snippets配合使用
+    "Plugin 'SirVer/ultisnips' "生成代码片段，补全功能来自YCM，与下面的vim-snippets配合使用,better than SnipMate.
     "Plugin 'honza/vim-snippets'
 endif
 
 Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
+Plugin 'terryma/vim-expand-region' "区块选择
 
 "Plugin 'xolox/vim-shell'
 "Plugin 'xolox/vim-misc'
+Plugin 'kshenoy/vim-signature' "显示marks,方便自己进行标记和跳转
+Plugin 'bronson/vim-trailing-whitespace' "快速去除行尾空格
+Plugin 'Lokaltog/vim-easymotion' "快速移动， 类似Vimperator里链接跳转的方式
+Plugin 'junegunn/vim-easy-align' "快速赋值对齐
+Plugin 'kien/rainbow_parentheses.vim' "括号配色
 " ...
-call vundle#end() 
+call vundle#end()
 filetype plugin indent on
 " e.vundle
 
@@ -250,21 +285,35 @@ map <C-k><S-t> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "endiF
 " e.区分windows和linux
 let Tlist_WinWidth = 30
-let Tlist_Ctags_Cmd="/usr/bin/ctags" "将taglist与ctags关联  
+let Tlist_Ctags_Cmd="/usr/bin/ctags" "将taglist与ctags关联
 let Tlist_Use_Right_Window=1         "在右侧窗口中显示taglist窗口,这里设置的无效，因为下面winmanager将其设置在了左边
-let Tlist_Show_One_File=1     "不同时显示多个文件的tag，只显示当前文件的    
-"let Tlist_Exit_OnlyWindow=1   "如果taglist窗口是最后一个窗口，则退出vim   
+let Tlist_Show_One_File=1     "不同时显示多个文件的tag，只显示当前文件的
+"let Tlist_Exit_OnlyWindow=1   "如果taglist窗口是最后一个窗口，则退出vim
 "let Tlist_Auto_Open=1 "自动加载taglist,由于下面使用了winmanager,里面会自动加载taglist，所以这里就不设置了
-map <C-k><C-t> :TlistToggle<CR> "由于下面winmanager配置的效果，使得该主窗口关闭后自动退出vim，所以使用这个开关就会导致vim退出。 
+map <C-k><C-t> :TlistToggle<CR> "由于下面winmanager配置的效果，使得该主窗口关闭后自动退出vim，所以使用这个开关就会导致vim退出。
 " e.taglist
 
-" a.txtbrowser
+" a.tagbar,it is said better than taglist.
+nmap <C-k><F8> :TagbarToggle<CR>
+"nmap <F9> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_left = 1
+let g:tagbar_expand = 1
+let g:tagbar_compact = 1
+let g:tagbar_singleclick = 1
+let g:tagbar_autoshowtag = 1
+let g:tagbar_ctags_bin = 'ctags'
+let g:tagbar_width = 30
+" e.tagbar
+
+" a.txtbrowser,文本浏览器
 let tlist_txt_settings='txt;c:content;f:figures;t:tables'
 au BufRead,BufNewFile *.txt setlocal ft=txt
 " 快捷键同上面taglist
 " e.txtbrowser
 
 " a.nerdtree
+
 "let NERDTreeWinPos=1 "nerdtree放在右侧
 map <C-k><C-n> :NERDTreeToggle<CR>
 " e.nerdtree
@@ -284,31 +333,31 @@ map <C-k><C-n> :NERDTreeToggle<CR>
 "   'i'   includes: find files that include the filename under cursor
 "   'd'   called: find functions that function under cursor calls
 "
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>	
+nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
 nmap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 
 " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
 " makes the vim window split horizontally, with search result displayed in
 " the new window.
 "
-nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
-nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
-nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 
-" Hitting CTRL-space *twice* before the search type does a vertical 
+" Hitting CTRL-space *twice* before the search type does a vertical
 " split instead of a horizontal one (vim 6 and up only)
 "
 " (Note: you may wish to put a 'set splitright' in your .vimrc
@@ -319,8 +368,8 @@ nmap <C-@><C-@>g :vert scs find g <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@><C-@>c :vert scs find c <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@><C-@>t :vert scs find t <C-R>=expand("<cword>")<CR><CR>
 nmap <C-@><C-@>e :vert scs find e <C-R>=expand("<cword>")<CR><CR>
-nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>	
-nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+nmap <C-@><C-@>f :vert scs find f <C-R>=expand("<cfile>")<CR><CR>
+nmap <C-@><C-@>i :vert scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 
 """"""""""""" key map timeouts
@@ -330,36 +379,36 @@ nmap <C-@><C-@>d :vert scs find d <C-R>=expand("<cword>")<CR><CR>
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
 " a.自动加载生成的cscope.out
-if has("cscope")  
-set csprg=/usr/bin/cscope  
+if has("cscope")
+set csprg=/usr/bin/cscope
 " check cscope for definition of a symbol before checking ctags: set to 1
 " if you want the reverse search order.
 set csto=0
-set cst  
-set csverb  
-set cspc=3  
+set cst
+set csverb
+set cspc=3
 " use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
 set cscopetag
 
-    "add any database in current dir  
-    if filereadable("cscope.out")  
-    	cs add cscope.out  
-    " else add the database pointed to by environment variable 
+    "add any database in current dir
+    if filereadable("cscope.out")
+    	cs add cscope.out
+    " else add the database pointed to by environment variable
     elseif $CSCOPE_DB != ""
     	cs add $CSCOPE_DB
-    "else search cscope.out elsewhere  
-    else  
-       let cscope_file=findfile("cscope.out", ".;")  
-       let cscope_pre=matchstr(cscope_file, ".*/")  
-       if !empty(cscope_file) && filereadable(cscope_file)  
-    	   exe "cs add" cscope_file cscope_pre  
-       endif        
-    endif  
-endif  
+    "else search cscope.out elsewhere
+    else
+       let cscope_file=findfile("cscope.out", ".;")
+       let cscope_pre=matchstr(cscope_file, ".*/")
+       if !empty(cscope_file) && filereadable(cscope_file)
+    	   exe "cs add" cscope_file cscope_pre
+       endif
+    endif
+endif
 " e.自动加载生成的cscope.out
 
 " show msg when any other cscope db added
-set cscopeverbose  
+set cscopeverbose
 
 " e.cscope
 
@@ -373,20 +422,27 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplMapWindowNavVim = 1
 " 用<C-箭头键>切换到上下左右窗口中去
 let g:miniBufExplMapWindowNavArrows = 1
+
+" 默认方向键左右可以切换buffer
+nnoremap <TAB> :MBEbn<CR>
+noremap <leader>bn :MBEbn<CR>
+noremap <leader>bp :MBEbp<CR>
+noremap <leader>bd :MBEbd<CR>
 " e.minibufexpl
 
-" a.winmanager 
-let g:NERDTree_title="[NERDTree]"  
-let g:winManagerWindowLayout="NERDTree|TagList" "控制这两个插件的显示位置 
+" a.winmanager
+let g:NERDTree_title="[NERDTree]"
+let g:winManagerWindowLayout="NERDTree|TagList" "控制这两个插件的显示位置
+"这里可以把tagbar整合到winmanager中，当前没整合，想使用tagbar时，使用映射的映射键打开
 " 使用当前winmanager设置，效果是nerd_tree和taglist分别在左侧上下排列，如果想让nerd_tree在左侧，taglist在右侧，可以使用该文件中设置的taglist快捷键,不过该主窗体退出后会导致vim退出，所以先用开关nerd-tree打快捷键先把顺序打乱，再依次开关nerd-tree和taglist.一种有效的顺序是：打开后先关闭nerd_tree->关闭taglist->打开taglist->打开nerd_tree.使用:qa退出.
 
-function! NERDTree_Start()  
-    exec 'NERDTree'  
-endfunction  
+function! NERDTree_Start()
+    exec 'NERDTree'
+endfunction
 
 function! NERDTree_IsValid()
-    return 1  
-endfunction  
+    return 1
+endfunction
 
 "使用快捷键打开,或者使用下面方式自动打开
 nmap wm :WMToggle<CR>
@@ -403,7 +459,7 @@ let g:winManagerWidth = 30 "设置宽度
 
 " a.quickfix
 nmap <F8>  :cp<cr> "跳到上一个结果
-nmap <F9>  :cn<cr> "跳到下一个结果 
+nmap <F9>  :cn<cr> "跳到下一个结果
 "nmap <F10> :cw<cr> "打开quickfix窗口
 "nmap <F10> :copen 6<cr> :copen 6<cr> "打开quickfix窗口,可以指定高度,这里输两次，第一次高度不生效
 nmap <F10> :botright cwindow 15<cr> :botright cwindow 15<cr> "打开quickfix窗口,可以指定高度,这里输两次，第一次高度不生效
@@ -464,9 +520,9 @@ let g:vim_markdown_math=1         "LaTeX math
 " e.ctrlp.vim
 " e.代码文件搜索插件
 
-" a.vim-powerline
-set laststatus=2 "始终显示状态栏
-"set laststatus=0 "不显示状态栏
+" a.vim-powerline 关闭powerline，使用airline
+"set laststatus=2 "始终显示状态栏
+set laststatus=0 "不显示状态栏
 set statusline+=%{fugitive#statusline()}  "Git Hotness,显示git，需要配合fugitive使用
 " e.vim-powerline
 
@@ -529,7 +585,7 @@ function! LookupFile_IgnoreCaseFunc(pattern)
     let files = map(tags, 'v:val["filename"]')
     return files
 endfunction
-let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc' 
+let g:LookupFile_LookupFunc = 'LookupFile_IgnoreCaseFunc'
 " e.lookupfile
 
 " a.project.vim,vimplugin/project.vim
@@ -556,13 +612,13 @@ let g:proj_window_width=72 "打开project时，如果nerdtree等窗口在右侧�
 "set runtimepath+=~/.vim/macros/gdb_mappings.vim  "vim runtimepath中增加后面的目录,这里没必要加，文件夹已经放在.vim中了，.vim是一个runtimepath，直接就能运行
 "不过，运行后，键映射还没开启，里面同时映射了一个开关F7,所以需要按下F7才能开启gdb键映射
 let g:vimgdb_debug_file = ""
-run macros/gdb_mappings.vim 
+run macros/gdb_mappings.vim
 
 set previewheight=12		" set gdb window initial height
 run macros/gdb_mappings.vim	" source key mappings listed in this document
 "set asm=0				    " don't show any assembly stuff
 "set gdbprg=gdb_invocation  " set GDB invocation string (default 'gdb')
-"set gdbprg=/usr/share/gdb 
+"set gdbprg=/usr/share/gdb
 nmap <silent> <C-k><C-v> :bel 20vsplit gdb-variables<cr>
 
 "使用方法总结：调试某个可执行文件时，可能需要在某个源码文件中打断点，此时不要使用:e filename的方式，而是使用:tabedit filename的方式，不然会导致程序运行时打开的文件新开一个窗口.
@@ -570,7 +626,7 @@ nmap <silent> <C-k><C-v> :bel 20vsplit gdb-variables<cr>
 
 " a.pyclewn 不需要编译vim就可以支持gdb
 " 显示启动信息，方便定位启动错误
-" 启动需要分割窗口，水平分割是有限制的，所以要把minibufexplorer和powerline的显示关闭，再启动pyclewn.
+" 启动需要分割窗口，水平分割是有限制的，所以要把minibufexplorer和powerline/airline的显示关闭，再启动pyclewn.
 let g:pyclewn_terminal="xterm, -e"
 " e.pyclewn 不需要编译vim就可以支持gdb
 
@@ -632,11 +688,11 @@ set completeopt=longest,menu
 " 加速你的补全 -- 插件: SuperTab,配合new-omni-completion
 let g:SuperTabDefaultCompletionType="context"
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
- " 设置按下<Tab>后默认的补全方式, 默认是<C-P>, 
- " 现在改为<C-X><C-O>. 关于<C-P>的补全方式, 
+ " 设置按下<Tab>后默认的补全方式, 默认是<C-P>,
+ " 现在改为<C-X><C-O>. 关于<C-P>的补全方式,
  " 还有其他的补全方式, 你可以看看下面的一些帮助:
  " :help ins-completion
- " :help compl-omni 
+ " :help compl-omni
 let g:SuperTabRetainCompletionType=2
  " 0 - 不记录上次的补全方式
  " 1 - 记住上次的补全方式,直到用其他的补全命令改变它
@@ -726,39 +782,39 @@ nnoremap <leader>jc :YcmCompleter ClearCompilationFlagCache<CR>   "清除flag缓
 " e.YCM配置
 
 "" a.srcExpl,功能不太稳定,暂停使用,不知是否是和YCM冲突所致
-"" // The switch of the Source Explorer 
-"nmap <F8> :SrcExplToggle<CR> 
-"" // Set the height of Source Explorer window 
-"let g:SrcExpl_winHeight = 8 
-"" // Set 100 ms for refreshing the Source Explorer 
-"let g:SrcExpl_refreshTime = 100 
-"" // Set "Enter" key to jump into the exact definition context 
-"" let g:SrcExpl_jumpKey = "<ENTER>" 
-"" // Set "Space" key for back from the definition context 
-"let g:SrcExpl_gobackKey = "<SPACE>" 
-"" // In order to Avoid conflicts, the Source Explorer should know what plugins 
-"" // are using buffers. And you need add their bufname into the list below 
-"" // according to the command ":buffers!" 
-"let g:SrcExpl_pluginList = [ 
-"        \ "__Tag_List__", 
-"        \ "_NERD_tree_", 
-"        \ "Source_Explorer" 
-"    \ ] 
-"" // Enable/Disable the local definition searching, and note that this is not 
-"" // guaranteed to work, the Source Explorer doesn't check the syntax for now. 
-"" // It only searches for a match with the keyword according to command 'gd' 
-"let g:SrcExpl_searchLocalDef = 1 
-"" // Do not let the Source Explorer update the tags file when opening 
-"let g:SrcExpl_isUpdateTags = 0 
-"" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to 
-"" //  create/update a tags file 
-"let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ." 
-"" // Set "<F11>" key for updating the tags file artificially 
-"let g:SrcExpl_updateTagsKey = "<F11>" 
-" " // Set "<F3>" key for displaying the previous definition in the jump list 
-" let g:SrcExpl_prevDefKey = "<F3>" 
-" " // Set "<F4>" key for displaying the next definition in the jump list 
-" let g:SrcExpl_nextDefKey = "<F4>" 
+"" // The switch of the Source Explorer
+"nmap <F8> :SrcExplToggle<CR>
+"" // Set the height of Source Explorer window
+"let g:SrcExpl_winHeight = 8
+"" // Set 100 ms for refreshing the Source Explorer
+"let g:SrcExpl_refreshTime = 100
+"" // Set "Enter" key to jump into the exact definition context
+"" let g:SrcExpl_jumpKey = "<ENTER>"
+"" // Set "Space" key for back from the definition context
+"let g:SrcExpl_gobackKey = "<SPACE>"
+"" // In order to Avoid conflicts, the Source Explorer should know what plugins
+"" // are using buffers. And you need add their bufname into the list below
+"" // according to the command ":buffers!"
+"let g:SrcExpl_pluginList = [
+"        \ "__Tag_List__",
+"        \ "_NERD_tree_",
+"        \ "Source_Explorer"
+"    \ ]
+"" // Enable/Disable the local definition searching, and note that this is not
+"" // guaranteed to work, the Source Explorer doesn't check the syntax for now.
+"" // It only searches for a match with the keyword according to command 'gd'
+"let g:SrcExpl_searchLocalDef = 1
+"" // Do not let the Source Explorer update the tags file when opening
+"let g:SrcExpl_isUpdateTags = 0
+"" // Use 'Exuberant Ctags' with '--sort=foldcase -R .' or '-L cscope.files' to
+"" //  create/update a tags file
+"let g:SrcExpl_updateTagsCmd = "ctags --sort=foldcase -R ."
+"" // Set "<F11>" key for updating the tags file artificially
+"let g:SrcExpl_updateTagsKey = "<F11>"
+" " // Set "<F3>" key for displaying the previous definition in the jump list
+" let g:SrcExpl_prevDefKey = "<F3>"
+" " // Set "<F4>" key for displaying the next definition in the jump list
+" let g:SrcExpl_nextDefKey = "<F4>"
 "" e.srcExpl
 
 " a.CCtree "暂只支持C. 实践时，加上下面这些就会出错，不知为何
@@ -770,4 +826,148 @@ nnoremap <leader>jc :YcmCompleter ClearCompilationFlagCache<CR>   "清除flag缓
 "自动加载(需要加载时再把注释去掉),cscope.out加载比较慢，使用ccglue生成索引数据库，加载比较快，ccglue实践加载不成功，需要继续研究
 "autocmd VimEnter * if filereadable("cscope.out") | exec "CCTreeLoadDB cscope.out" | elseif filereadable("../cscope.out") | exec "CCTreeLoadDB ../cscope.out" | elseif filereadable("../../cscope.out") | exec "CCTreeLoadDB ../../cscope.out" | elseif $CSCOPE_DB!= "" | exec "CCTreeLoadDB $CSCOPE_DB" |  else | exec "CCTreeLoadDB " | endif "先遍历当前目录以及上两层目录，如果找不到，则根据环境变量设置的进行加载，还找不到，则手动输入cscope.out所在位置
 " e.CCtree
+
+" a.vim-commentary
+" My favorite file type isn't supported!
+" Relax! You just have to adjust 'commentstring':
+" autocmd FileType apache setlocal commentstring=#\ %s
+" e.vim-commentary
+
+" a. vim-multiple-cursor, similar to sublime
+let g:multi_cursor_use_default_mapping=0
+" Default mapping
+let g:multi_cursor_next_key='<C-m>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
+let g:multi_cursor_quit_key='<Esc>'
+" e. vim-multiple-cursor
+
+" a.vim-expand-region
+map + <Plug>(expand_region_expand)
+map _ <Plug>(expand_region_shrink)
+" e.vim-expand-region
+
+" a.vim-signature' "显示marks,方便自己进行标记和跳转
+"m[a-zA-Z] add mark
+"'[a-zA-Z] go to mark
+"m<Space>  del all marks
+"其它的参见插件说明
+"当前取消无效
+" e.vim-signature'
+
+" a.vim-trailing-whitespace,快速去除行尾空格
+map <leader><space> :FixWhitespace<cr>
+" e.vim-trailing-whitespace,快速去除行尾空格
+
+" a.vim-easymotion 快速移动，类似fifrfox的hint
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+"e.vim-easymotion
+
+" a.vim-easy-align,快速赋值对齐
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+" e.vim-easy-align
+
+" a.vim-airline,底部状态栏
+"This is disabled by default; add the following to your vimrc to enable the extension:
+let g:airline#extensions#tabline#enabled = 1
+"Separators can be configured independently for the tabline, so here is how you can define "straight" tabs:
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+
+"let g:airline_theme="luna"
+"这个是安装字体后 必须设置此项"
+"let g:airline_powerline_fonts = 1
+""打开tabline功能,方便查看Buffer和切换，这个功能比较不错"
+""我还省去了minibufexpl插件，因为我习惯在1个Tab下用多个buffer"
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+"
+""设置切换Buffer快捷键"
+"nnoremap <C-N> :bn<CR>
+"nnoremap <C-P> :bp<CR>
+"
+"" 关闭状态显示空白符号计数,这个对我用处不大"
+"let g:airline#extensions#whitespace#enabled = 0
+"let g:airline#extensions#whitespace#symbol = '!'
+
+set t_Co=256
+"set guifont=monofur\ for\ Powerline
+"set laststatus=2
+"set lazyredraw
+"let g:airline_theme='powerlineish'
+" 使用powerline打过补丁的字体
+"let g:airline_powerline_fonts=1
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols={}
+"endif
+"" 关闭空白符检测
+"let g:airline#extensions#whitespace#enabled=0
+
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+" e.vim-airline,底部状态栏
+
+" a.rainboweparentheses, 括号配色
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+" 不加入这行, 防止黑色括号出现, 很难识别
+" \ ['black',       'SeaGreen3'],
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+" e.rainboweparentheses, 括号配色
 

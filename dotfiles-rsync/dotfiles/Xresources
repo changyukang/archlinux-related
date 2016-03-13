@@ -11,8 +11,10 @@ XTerm*highlightSelection: true
 !!xterm*faceNameDoublesize: WenQuanYi Microhei:antialias=true
 !!xterm*faceSize: 10
 XTerm*faceName: Bitstream Vera Sans Mono
+!!XTerm*faceName: monofur\ for\ Powerline
 XTerm*faceSize: 10
 XTerm*faceNameDoublesize: 文泉驿点陈正黑
+!!XTerm*faceNameDoublesize: monofur\ for\ Powerline
 XTerm*mkWidth: false
 XTerm*charClass: 33:48,36-47:48,58-59:48,61:48,63-64:48,95:48,126:48
 xterm*rightScrollBar: true

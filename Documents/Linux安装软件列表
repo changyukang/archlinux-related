@@ -38,6 +38,9 @@
 37.stow: 包管理器，主要是tar包
 38.pip: python2-pip/python-pip,python包的推荐安装工具,这里使用它安装了vim gdb调试工具pyclewn。
         ------ pyclewn: vim gdb调试工具
+#39.lantern: 翻墙工具
+40.power-line
+41.Fontconfig:字体
 
 
 #yaourt
