@@ -1,4 +1,5 @@
 #需要时可以先将文件夹删除
+#当前由于下面库已经添加为了submodule，所以不需要执行该脚本了
 	git rm --cached dotfiles-rsync/dotfiles/oh-my-zsh 
     git submodule add git@github.com:changyukang/oh-my-zsh.git dotfiles-rsync/dotfiles/oh-my-zsh
 	git rm --cached dotfiles-rsync/dotfiles/z

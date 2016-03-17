@@ -1,4 +1,7 @@
 #!/bin/sh  
+#写在前面：
+#1. archlinux-related库中所有文件均使用submodule方式管理，所以clone后需要git submodule update --init
+
 #使用说明：恢复dotfiles软连接
 
 DOTFILES_PATH=~/my-linux/dotfiles
