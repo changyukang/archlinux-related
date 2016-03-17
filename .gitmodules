@@ -4,9 +4,6 @@
 [submodule "dotfiles-rsync/dotfiles/z"]
 	path = dotfiles-rsync/dotfiles/z
 	url = git@github.com:changyukang/z.git
-[submodule "dotfiles-rsync/dotfiles/Font/powerline/fonts"]
-	path = dotfiles-rsync/dotfiles/Font/powerline/fonts
-	url = git@github.com:powerline/fonts
 [submodule "dotfiles-rsync/dotfiles/vim/bundle/Vundle.vim"]
 	path = dotfiles-rsync/dotfiles/vim/bundle/Vundle.vim
 	url = git@github.com:gmarik/Vundle.vim
