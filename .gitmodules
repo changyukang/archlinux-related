@@ -4,3 +4,186 @@
 [submodule "dotfiles-rsync/dotfiles/z"]
 	path = dotfiles-rsync/dotfiles/z
 	url = git@github.com:changyukang/z.git
+[submodule "dotfiles-rsync/dotfiles/Font/powerline/fonts"]
+	path = dotfiles-rsync/dotfiles/Font/powerline/fonts
+	url = git@github.com:powerline/fonts
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/Vundle.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/Vundle.vim
+	url = git@github.com:gmarik/Vundle.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/rails.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/rails.vim
+	url = git@github.com:vim-scripts/rails.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/taglist.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/taglist.vim
+	url = git@github.com:vim-scripts/taglist.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/tagbar"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/tagbar
+	url = git@github.com:majutsushi/tagbar
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/TxtBrowser"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/TxtBrowser
+	url = git@github.com:vim-scripts/TxtBrowser
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/nerdtree"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/nerdtree
+	url = git@github.com:scrooloose/nerdtree
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/bufkill.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/bufkill.vim
+	url = git@github.com:vim-scripts/bufkill.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vimprj"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vimprj
+	url = git@github.com:vim-scripts/vimprj
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/DfrankUtil"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/DfrankUtil
+	url = git@github.com:vim-scripts/DfrankUtil
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/cscope"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/cscope
+	url = git@github.com:lboulard/cscope
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/cscope_map.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/cscope_map.vim
+	url = git@github.com:wolfpython/cscope_map.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/minibufexpl.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/minibufexpl.vim
+	url = git@github.com:fholgado/minibufexpl.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/a.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/a.vim
+	url = git@github.com:vim-scripts/a.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/grep.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/grep.vim
+	url = git@github.com:vim-scripts/grep.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/Visual-Mark"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/Visual-Mark
+	url = git@github.com:vim-scripts/Visual-Mark
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/winmanager--Fox"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/winmanager--Fox
+	url = git@github.com:vim-scripts/winmanager--Fox
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/evening_2"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/evening_2
+	url = git@github.com:vim-scripts/evening_2
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/xfce4-terminal-colors-solarized"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/xfce4-terminal-colors-solarized
+	url = git@github.com:sgerrand/xfce4-terminal-colors-solarized
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-colors-solarized"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/solarized"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/solarized
+	url = git@github.com:altercation/solarized
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/csExplorer"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/csExplorer
+	url = git@github.com:scwbin/csExplorer
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/delimitMate"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/delimitMate
+	url = git@github.com:Raimondi/delimitMate
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/tabular"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/tabular
+	url = git@github.com:godlygeek/tabular
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-markdown"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-markdown
+	url = git@github.com:plasticboy/vim-markdown
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-instant-markdown"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-instant-markdown
+	url = git@github.com:suan/vim-instant-markdown
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ack.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ack.vim
+	url = git@github.com:vim-scripts/ack.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ack2"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ack2
+	url = git@github.com:petdance/ack2
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ag.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ag.vim
+	url = git@github.com:rking/ag.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ctrlsf.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ctrlsf.vim
+	url = git@github.com:dyng/ctrlsf.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ctrlp.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ctrlp.vim
+	url = git@github.com:kien/ctrlp.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ctrlp-funky"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ctrlp-funky
+	url = git@github.com:tacahiroy/ctrlp-funky
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-git"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-git
+	url = git@github.com:tpope/vim-git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-fugitive"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-fugitive
+	url = git@github.com:tpope/vim-fugitive
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-commentary"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-commentary
+	url = git@github.com:tpope/vim-commentary
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-surround"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-surround
+	url = git@github.com:tpope/vim-surround
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-sensible"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-sensible
+	url = git@github.com:tpope/vim-sensible
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-unimpaired"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-unimpaired
+	url = git@github.com:tpope/vim-unimpaired
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-airline"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-airline
+	url = git@github.com:vim-airline/vim-airline
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-airline-themes"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-airline-themes
+	url = git@github.com:vim-airline/vim-airline-themes
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/genutils"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/genutils
+	url = git@github.com:vim-scripts/genutils
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/lookupfile"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/lookupfile
+	url = git@github.com:vim-scripts/lookupfile
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/project.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/project.vim
+	url = git@github.com:vimplugin/project.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-lastplace"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-lastplace
+	url = git@github.com:dietsche/vim-lastplace
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/supertab"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/supertab
+	url = git@github.com:ervandew/supertab
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/neocomplcache.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/neocomplcache.vim
+	url = git@github.com:shougo/neocomplcache.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vimux"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vimux
+	url = git@github.com:benmills/vimux
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/VimIM"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/VimIM
+	url = git@github.com:vim-scripts/VimIM
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/YouCompleteMe"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/YouCompleteMe
+	url = git@github.com:Valloric/YouCompleteMe
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/YCM-Generator"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/YCM-Generator
+	url = git@github.com:rdnetto/YCM-Generator
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-multiple-cursors"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-expand-region"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-expand-region
+	url = git@github.com:terryma/vim-expand-region
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-signature"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-signature
+	url = git@github.com:kshenoy/vim-signature
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-trailing-whitespace"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-trailing-whitespace
+	url = git@github.com:bronson/vim-trailing-whitespace
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-easymotion"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-easymotion
+	url = git@github.com:Lokaltog/vim-easymotion
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-easy-align"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-easy-align
+	url = git@github.com:junegunn/vim-easy-align
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/rainbow_parentheses.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/rainbow_parentheses.vim
+	url = git@github.com:kien/rainbow_parentheses.vim
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/command-t"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/command-t
+	url = git://git.wincent.com/command-t.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/CCTree"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/CCTree
+	url = git@github.com:hari-rangarajan/CCTree.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/FuzzyFinder"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/FuzzyFinder
+	url = git@github.com:vim-scripts/FuzzyFinder
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/L9"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/L9
+	url = git@github.com:vim-scripts/L9
