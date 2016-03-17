@@ -126,3 +126,6 @@
 	git submodule add git@github.com:vim-scripts/FuzzyFinder dotfiles-rsync/dotfiles/vim/bundle/FuzzyFinder
 	git rm --cached dotfiles-rsync/dotfiles/vim/bundle/L9
 	git submodule add git@github.com:vim-scripts/L9 dotfiles-rsync/dotfiles/vim/bundle/L9
+	git rm --cached dotfiles-rsync/dotfiles/Other_Resources/exVim
+	git submodule add git@github.com:exvim/main.git dotfiles-rsync/dotfiles/Other_Resources/exVim
+
