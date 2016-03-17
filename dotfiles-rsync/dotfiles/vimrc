@@ -971,3 +971,5 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " e.rainboweparentheses, 括号配色
 
+"退出vim时,恢复~/.vimrc连接
+"autocmd VimLeave * exec "!rm -f ~/.vimrc" | exec "!ln -s ~/.vimrc.bak ~/.vimrc"
