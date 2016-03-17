@@ -187,3 +187,6 @@
 [submodule "dotfiles-rsync/dotfiles/Other_Resources/exvim/main"]
 	path = dotfiles-rsync/dotfiles/Other_Resources/exvim/main
 	url = git@github.com:exvim/main.git
+[submodule "dotfiles-rsync/dotfiles/Other_Resources/Font/powerline/fonts"]
+	path = dotfiles-rsync/dotfiles/Other_Resources/Font/powerline/fonts
+	url = git@github.com:powerline/fonts
