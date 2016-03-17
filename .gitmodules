@@ -184,9 +184,6 @@
 [submodule "dotfiles-rsync/dotfiles/vim/bundle/L9"]
 	path = dotfiles-rsync/dotfiles/vim/bundle/L9
 	url = git@github.com:vim-scripts/L9
-[submodule "dotfiles-rsync/dotfiles/Other_Resources/Font"]
-	path = dotfiles-rsync/dotfiles/Other_Resources/Font
-	url = git@github.com:powerline/fonts
-[submodule "dotfiles-rsync/dotfiles/Other_Resources/exVim"]
-	path = dotfiles-rsync/dotfiles/Other_Resources/exVim
+[submodule "dotfiles-rsync/dotfiles/Other_Resources/exvim/main"]
+	path = dotfiles-rsync/dotfiles/Other_Resources/exvim/main
 	url = git@github.com:exvim/main.git
