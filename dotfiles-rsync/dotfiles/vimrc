@@ -449,7 +449,8 @@ nmap wm :WMToggle<CR>
 "启动时自动打开winmanager,该变量定义在插件mismanager.vim中
 let g:AutoOpenWinManager = 1
 "自动退出Winmanager,判断当前窗口包含几个子窗口，如果有2个的话自动退出
-autocmd bufenter * if (winnr("$") == 2 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary")  | qa | endif
+"autocmd bufenter * if (winnr("$") == 2 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")  | qa | endif
+autocmd bufenter * if (winnr("$") == 2 && exists("NERDTree"))  | qa | endif
 let g:winManagerWidth = 30 "设置宽度
 "启用鼠标操作,方便使用nerdtree时用鼠标选择文件
 "在windows中通过putty访问，需要注释掉，即把鼠标功能屏蔽，不然在vim中通过右键点击会进入可视模式，不能黏贴文本。
