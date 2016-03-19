@@ -33,6 +33,9 @@ ln -s $DOTFILES_PATH/tmux.conf ~/.tmux.conf
 
 
 # 软件相关
+#git
+ln -s $DOTFILES_PATH/gitconfig ~/.gitconfig
+
 # vim
 ln -s $DOTFILES_PATH/vimrc ~/.vimrc
 ln -s $DOTFILES_PATH/vim ~/.vim
