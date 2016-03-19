@@ -35,8 +35,11 @@ alias rsyncdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-lin
 alias rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync'
 alias rsyncgitdocument='rsync -auvrtzopgiP --progress --delete ~/my-linux.bak/Documents ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/'
 #定义reverse_rsync反同步命令，用于系统出问题后，从github更新后恢复系统
-alias reverse_rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/ ~/my-linux/'
-alias reverse_rsyncgitdocument='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/Documents/ ~/my-linux.bak/Documents'
+#alias reverse_rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/ ~/my-linux/'
+#alias reverse_rsyncgitdocument='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/Documents/ ~/my-linux.bak/Documents'
+#上面忽略掉了.git目录，导致~/my-linux/下的文件与archlinux-related中的不一致,所以这里不应该忽略掉git库信息
+alias reverse_rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/ ~/my-linux/'
+alias reverse_rsyncgitdocument='rsync -auvrtzopgiP --progress --delete ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/Documents/ ~/my-linux.bak/Documents'
 #
 
 ##zsh显示路径风格
