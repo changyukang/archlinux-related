@@ -1,6 +1,7 @@
-#!/bin/sh  
+#!/bin/sh
 #写在前面：
-#1. archlinux-related库中所有文件均使用submodule方式管理，所以clone后需要git submodule update --init
+#1. archlinux-related库中所有文件均使用submodule方式管理，所以clone后需要git submodule update --init --recursive, 加recursive是因为有些子模组中还含有子模组。
+#2. 当前vim插件中只有winmanager有修改，个性化nerdtree和taglist的窗口布局;另外youcompleteme需要编译;vimgdb需要打补丁，且需要编vim使其支持gdb，现在已经用pyclewn代替。
 
 #使用说明：恢复dotfiles软连接
 
@@ -22,7 +23,7 @@ ln -s $DOTFILES_PATH/fbtermrc ~/.fbtermrc
 #5.安装在虚拟终端下可以显示中文的fbterm所用的小小输入法
 # 因为输入法不是通过包管理器安装，并且安装后有些配置修改，所以将程序文件一并备份
 # 通过包管理器安装的并且程序安装目录内文件没有修改的，不必备份，只需备份配置文件
-ln -s $DOTFILES_PATH/yong/ /usr/local/yong 
+ln -s $DOTFILES_PATH/yong/ /usr/local/yong
 ln -s $DOTFILES_PATH/yong_config/ ~/.yong
 
 #6.dir_colors, ls显示颜色, 部分设置在类.zshrc中
