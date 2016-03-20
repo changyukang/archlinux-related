@@ -46,9 +46,6 @@
 [submodule "dotfiles-rsync/dotfiles/vim/bundle/grep.vim"]
 	path = dotfiles-rsync/dotfiles/vim/bundle/grep.vim
 	url = git@github.com:vim-scripts/grep.vim
-[submodule "dotfiles-rsync/dotfiles/vim/bundle/Visual-Mark"]
-	path = dotfiles-rsync/dotfiles/vim/bundle/Visual-Mark
-	url = git@github.com:vim-scripts/Visual-Mark
 [submodule "dotfiles-rsync/dotfiles/vim/bundle/winmanager--Fox"]
 	path = dotfiles-rsync/dotfiles/vim/bundle/winmanager--Fox
 	url = git@github.com:vim-scripts/winmanager--Fox

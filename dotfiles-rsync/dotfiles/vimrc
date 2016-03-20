@@ -161,7 +161,7 @@ Plugin 'rails.vim'
 Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'wincent/ferret' "Powerful multi-file search
 Plugin 'wincent/loupe' "hlsearch enhance & provide a way to remove search highlighting
-Plugin 'wincent/vim-clipper' "clipboard enhance
+Plugin 'wincent/vim-clipper' "clipboard enhance,可以dd删除一行而不改变clipboard内容
 Plugin 'wincent/terminus' "Terminus enhances Vim's integration with the terminal in four ways, particularly when using tmux and iTerm or KDE Konsole, closing the gap between terminal and GUI Vim
 Plugin 'svermeulen/vim-easyclip' "可以存储多个复制的内容
 Plugin 'duggiefresh/vim-easydir' "easy create parent folder
@@ -187,7 +187,7 @@ Plugin 'wolfpython/cscope_map.vim'
 Plugin 'fholgado/minibufexpl.vim' "vim-airline后我都不需要用minibufexpl.vim了，其自带切换buffer功能,安装vim-airline前要安装相应打过powerline补丁的字体，不然在airline状态栏上无法正常显示图标和三角形箭头符号.
 Plugin 'a.vim' "根据.c跳转到同名.h
 Plugin 'grep.vim' "authored by yegappan
-Plugin 'Visual-Mark'
+"Plugin 'Visual-Mark' "在左侧显示mark标记,并能对其进行处理
 Plugin 'winmanager--Fox'  " a bug-fix version for winmanager
 Plugin 'evening_2'
 Plugin 'sgerrand/xfce4-terminal-colors-solarized'  "xfce4 terminal only, Solarized
@@ -1030,6 +1030,11 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 " e.vim-indent-guides
 
+"*********************处理键冲突************************
+"1. mm: Visual-Mark:设置标签; vim-easyclip: 替代dd功能，即删除一行并将其拷贝到剪切板
+"  当前处理：禁用Visual-Mark.
+
+"*********************处理键冲突************************
 
 "退出vim时,恢复~/.vimrc连接
 "autocmd VimLeave * exec "!rm -f ~/.vimrc" | exec "!ln -s ~/.vimrc.bak ~/.vimrc"
