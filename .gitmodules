@@ -238,3 +238,9 @@
 [submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-speeddating"]
 	path = dotfiles-rsync/dotfiles/vim/bundle/vim-speeddating
 	url = git@github.com:tpope/vim-speeddating.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/terminus"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/terminus
+	url = git@github.com:wincent/terminus.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-easyclip"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-easyclip
+	url = git@github.com:svermeulen/vim-easyclip.git

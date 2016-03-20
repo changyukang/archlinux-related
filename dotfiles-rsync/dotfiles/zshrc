@@ -34,6 +34,9 @@ alias lht='ls -hlt' #同上，增加按时间排序
 alias rsyncdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-linux.bak/my-linux.dotfiles.bak/dotfiles-rsync'
 alias rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete ~/my-linux/ ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync'
 alias rsyncgitdocument='rsync -auvrtzopgiP --progress --delete ~/my-linux.bak/Documents ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/'
+#备份zshrc&vimrc to archlinux-related
+alias rsyncdotfiles_zshrc='rsync -auvrtzopgiP --progress --delete ~/my-linux/dotfiles/zshrc ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/dotfiles/'
+alias rsyncdotfiles_vimrc='rsync -auvrtzopgiP --progress --delete ~/my-linux/dotfiles/vimrc ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/dotfiles/'
 #定义reverse_rsync反同步命令，用于系统出问题后，从github更新后恢复系统
 #alias reverse_rsyncgitdotfiles='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/dotfiles-rsync/ ~/my-linux/'
 #alias reverse_rsyncgitdocument='rsync -auvrtzopgiP --progress --delete --exclude=.git --exclude=.gitmodules --exclude=.gitignore ~/my-linux.bak/my-linux.dotfiles.git.bak/archlinux-related/Documents/ ~/my-linux.bak/Documents'

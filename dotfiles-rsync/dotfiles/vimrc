@@ -162,6 +162,8 @@ Plugin 'git://git.wincent.com/command-t.git'
 Plugin 'wincent/ferret' "Powerful multi-file search
 Plugin 'wincent/loupe' "hlsearch enhance & provide a way to remove search highlighting
 Plugin 'wincent/vim-clipper' "clipboard enhance
+Plugin 'wincent/terminus' "Terminus enhances Vim's integration with the terminal in four ways, particularly when using tmux and iTerm or KDE Konsole, closing the gap between terminal and GUI Vim
+Plugin 'svermeulen/vim-easyclip' "可以存储多个复制的内容
 Plugin 'duggiefresh/vim-easydir' "easy create parent folder
 Plugin 'sjl/gundo.vim' "visualize your Vim undo tree
 Plugin 'tomtom/tcomment_vim' "coment line & region, etc.
@@ -1008,6 +1010,26 @@ au Syntax * RainbowParenthesesLoadBraces
 " 改变快捷键映射,Instead of <leader>y, use <leader>x.
 " nmap <leader>x <Plug>(ClipperClip)
 " e.vim-clipper
+
+" a.vim-repeat
+"The following plugins support repeat.vim:
+"surround.vim
+"speeddating.vim
+"abolish.vim
+"unimpaired.vim
+"commentary.vim
+"vim-easyclip
+" e.vim-repeat
+
+" a.vim-indent-guides
+" 默认快捷键leader ig
+" 设置默认开启
+" let g:indent_guides_enable_on_vim_startup = 1
+set ts=4 sw=4 et
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+" e.vim-indent-guides
+
 
 "退出vim时,恢复~/.vimrc连接
 "autocmd VimLeave * exec "!rm -f ~/.vimrc" | exec "!ln -s ~/.vimrc.bak ~/.vimrc"
