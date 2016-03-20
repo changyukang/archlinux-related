@@ -2,6 +2,10 @@
 #写在前面：
 #1. archlinux-related库中所有文件均使用submodule方式管理，所以clone后需要git submodule update --init --recursive, 加recursive是因为有些子模组中还含有子模组。
 #2. 当前vim插件中只有winmanager有修改，个性化nerdtree和taglist的窗口布局;另外youcompleteme需要编译;vimgdb需要打补丁，且需要编vim使其支持gdb，现在已经用pyclewn代替。
+#3. archlinux-related是个库，里面以submodule管理了插件，而实际使用时是在~/my-linux，为了保持这个目录跟archlinux-related一致，所以应该在添加插件时在archlinux-related目录通过子模组添加，然后修改vimrc，之后同步到~/my-linux，此时不能通过BundleIinstall更新插件，因为插件是子模组，所以库信息保存在archlinux-related目录中。
+#   所以添加插件的操作是:在archlinux-related目录添加插件为子模组，并修改vimrc，之后通过.zshrc中定义的同步命令同步到~/my-linux。
+#   删除插件的方法是:在~/my-linux可以通过BundleClean删除插件，并需要在archlinux-related中将插件的子模组信息删除。
+#   更新插件的方法是:在archlinux-related中通过git submodule update --recursive更新子模组，并同步到~/my-linux。
 
 #使用说明：恢复dotfiles软连接
 
