@@ -190,3 +190,51 @@
 [submodule "dotfiles-rsync/dotfiles/Other_Resources/Font/powerline/fonts"]
 	path = dotfiles-rsync/dotfiles/Other_Resources/Font/powerline/fonts
 	url = git@github.com:powerline/fonts
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ferret"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ferret
+	url = git@github.com:wincent/ferret.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/gundo.vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/gundo.vim
+	url = git@github.com:sjl/gundo.vim.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/loupe"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/loupe
+	url = git@github.com:wincent/loupe.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/nerdtree-git-plugin"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/nerdtree-git-plugin
+	url = git@github.com:Xuyuanp/nerdtree-git-plugin.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/tcomment_vim"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/tcomment_vim
+	url = git@github.com:tomtom/tcomment_vim.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/ultisnips"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/ultisnips
+	url = git@github.com:SirVer/ultisnips.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-snippets"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-snippets
+	url = git@github.com:honza/vim-snippets.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-abolish"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-abolish
+	url = git@github.com:tpope/vim-abolish.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-clipper"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-clipper
+	url = git@github.com:wincent/vim-clipper.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-dispatch"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-dispatch
+	url = git@github.com:tpope/vim-dispatch.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-easydir"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-easydir
+	url = git@github.com:duggiefresh/vim-easydir.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-eunuch"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-eunuch
+	url = git@github.com:tpope/vim-eunuch.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-indent-guides"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-indent-guides
+	url = git@github.com:nathanaelkane/vim-indent-guides.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-lion"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-lion
+	url = git@github.com:tommcdo/vim-lion.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-repeat"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-repeat
+	url = git@github.com:tpope/vim-repeat.git
+[submodule "dotfiles-rsync/dotfiles/vim/bundle/vim-speeddating"]
+	path = dotfiles-rsync/dotfiles/vim/bundle/vim-speeddating
+	url = git@github.com:tpope/vim-speeddating.git

@@ -159,13 +159,20 @@ Plugin 'L9'
 Plugin 'FuzzyFinder'
 Plugin 'rails.vim'
 Plugin 'git://git.wincent.com/command-t.git'
+Plugin 'wincent/ferret' "Powerful multi-file search
+Plugin 'wincent/loupe' "hlsearch enhance & provide a way to remove search highlighting
+Plugin 'wincent/vim-clipper' "clipboard enhance
+Plugin 'duggiefresh/vim-easydir' "easy create parent folder
+Plugin 'sjl/gundo.vim' "visualize your Vim undo tree
+Plugin 'tomtom/tcomment_vim' "coment line & region, etc.
 Plugin 'taglist.vim'
 Plugin 'majutsushi/tagbar' "据说比taglist好,需要exuberant-ctags配合
 "Plugin 'TagHighlight' "根据生成的tag文件，高亮类/变量/函数/关键字
 Plugin 'TxtBrowser'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'oblitum/bufkill' "nerdtree是最后一个窗口时，不让其缩放
-Plugin 'bufkill.vim' "nerdtree是最后一个窗口时，不让其缩放
+Plugin 'Xuyuanp/nerdtree-git-plugin' "show git status
+"Plugin 'oblitum/bufkill' "nerdtree是最后一个窗口时，不让其缩放?
+Plugin 'bufkill.vim' "nerdtree是最后一个窗口时，不让其缩放?
 Plugin 'vimprj' "方便管理工程相关的vim配置,可以在自己工程目录建立一个.vimprj/my.vim,这里面做些个性设置，比如tab宽度，vim启动时会source这里的配置。
 Plugin 'DfrankUtil' "vimprj依赖，a simple library.
 Plugin 'lboulard/cscope'
@@ -210,6 +217,16 @@ Plugin 'tpope/vim-commentary' "注释
 Plugin 'tpope/vim-surround' "将包围字符串的双引号/括号等更换成其它的或者去掉，同时支持html标签
 Plugin 'tpope/vim-sensible'
 Plugin 'tpope/vim-unimpaired' "让[]发挥奇效
+Plugin 'tpope/vim-abolish' "自定义经常拼错打词，并自动更正
+Plugin 'tpope/vim-dispatch' "Leverage the power of Vim's compiler plugins
+Plugin 'tpope/vim-eunuch' "提供unix的一些命令，比如Chown/Mkdir,etc.
+"Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-repeat' "vim .重复命令增强
+Plugin 'tpope/vim-speeddating' "快捷键增减日期
+Plugin 'nathanaelkane/vim-indent-guides' "缩进提示线
+"Plugin 'digitaltoad/vim-pug'
+"Plugin 'pangloss/vim-javascript'
+"Plugin 'mxw/vim-jsx'
 "Plugin 'Lokaltog/vim-powerline' "状态栏显示，配合fugitive可以显示git信息
 Plugin 'vim-airline/vim-airline' "状态栏显示,better than vim-powerline.
 Plugin 'vim-airline/vim-airline-themes'
@@ -251,8 +268,8 @@ Plugin 'vim-scripts/VimIM'
 if MySys()=="unix"
     Plugin 'Valloric/YouCompleteMe'
     Plugin 'rdnetto/YCM-Generator' "生成.ycm_extra_conf.py，使用方法：见网页插件使用说明
-    "Plugin 'SirVer/ultisnips' "生成代码片段，补全功能来自YCM，与下面的vim-snippets配合使用,better than SnipMate.
-    "Plugin 'honza/vim-snippets'
+    Plugin 'SirVer/ultisnips' "生成代码片段，补全功能来自YCM，与下面的vim-snippets配合使用,better than SnipMate.
+    Plugin 'honza/vim-snippets'
 endif
 
 Plugin 'terryma/vim-multiple-cursors' "True Sublime Text style multiple selections for Vim
@@ -264,6 +281,7 @@ Plugin 'kshenoy/vim-signature' "显示marks,方便自己进行标记和跳转
 Plugin 'bronson/vim-trailing-whitespace' "快速去除行尾空格
 Plugin 'Lokaltog/vim-easymotion' "快速移动， 类似Vimperator里链接跳转的方式
 Plugin 'junegunn/vim-easy-align' "快速赋值对齐
+Plugin 'tommcdo/vim-lion' "similar to vim-easy-align, 对齐
 Plugin 'kien/rainbow_parentheses.vim' "括号配色
 " ...
 call vundle#end()
@@ -313,7 +331,6 @@ au BufRead,BufNewFile *.txt setlocal ft=txt
 " e.txtbrowser
 
 " a.nerdtree
-
 "let NERDTreeWinPos=1 "nerdtree放在右侧
 map <C-k><C-n> :NERDTreeToggle<CR>
 " e.nerdtree
@@ -448,13 +465,14 @@ endfunction
 nmap wm :WMToggle<CR>
 "启动时自动打开winmanager,该变量定义在插件mismanager.vim中
 let g:AutoOpenWinManager = 1
+
 "自动退出Winmanager,判断当前窗口包含几个子窗口，如果有2个的话自动退出
 "autocmd bufenter * if (winnr("$") == 2 && exists("b:NERDTreeType") && b:NERDTreeType == "primary")  | qa | endif
-autocmd bufenter * if (winnr("$") == 2 && exists("NERDTree"))  | qa | endif
+autocmd bufenter * if (winnr("$") == 2 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | qa | endif
 let g:winManagerWidth = 30 "设置宽度
 "启用鼠标操作,方便使用nerdtree时用鼠标选择文件
 "在windows中通过putty访问，需要注释掉，即把鼠标功能屏蔽，不然在vim中通过右键点击会进入可视模式，不能黏贴文本。
-"set mouse=a
+set mouse=a
 "set mouse-=a
 " e.winmanager
 
@@ -782,6 +800,16 @@ nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>   "跳转到
 nnoremap <leader>jc :YcmCompleter ClearCompilationFlagCache<CR>   "清除flag缓存
 " e.YCM配置
 
+" a.ultisnips 代码补全
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<c-e>" "快捷键设置的跟SI类似
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" e.ultisnips 代码补全
+
 "" a.srcExpl,功能不太稳定,暂停使用,不知是否是和YCM冲突所致
 "" // The switch of the Source Explorer
 "nmap <F8> :SrcExplToggle<CR>
@@ -971,6 +999,15 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 " e.rainboweparentheses, 括号配色
+
+" a.vim-clipper
+" Controls whether to set up the |<Plug>(ClipperClip)| mapping. To prevent any mapping from being configured, set to 0 in your |.vimrc|
+" let g:ClipperMap=0
+" To prevent vim-clipper from being loaded, set |g:ClipperLoaded| to any value in your |.vimrc|
+" let g:ClipperLoaded=1
+" 改变快捷键映射,Instead of <leader>y, use <leader>x.
+" nmap <leader>x <Plug>(ClipperClip)
+" e.vim-clipper
 
 "退出vim时,恢复~/.vimrc连接
 "autocmd VimLeave * exec "!rm -f ~/.vimrc" | exec "!ln -s ~/.vimrc.bak ~/.vimrc"
