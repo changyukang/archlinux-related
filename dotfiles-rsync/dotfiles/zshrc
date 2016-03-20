@@ -27,6 +27,13 @@ alias l='ls -CFhlt'    #文件和文件夹区分开
 alias lA='ls -CFhltA'    #文件和文件夹区分开
 alias lh='ls -hl'   #列表形式，以KB为单位显示文件大小
 alias lht='ls -hlt' #同上，增加按时间排序
+#快速返回上级目录
+alias cd1="cd .."
+alias cd2="cd ../.."
+alias cd3="cd ../../.."
+alias cd4="cd ../../../.."
+alias cd5="cd ../../../../.."
+
 
 #定义rsync同步命令
 #同步~/my-linux/dotfiles到~/my-linux.bak/my-linux.dotfiles.bak
