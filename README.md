@@ -22,7 +22,7 @@ On the way
 * 安装YCM，实现精确语义解析和语法补全；
 * 已经集成其它插件，打造成IDE环境；
 * 使用solarized主题。
-![VIM IDE](http://7xoae4.com1.z0.glb.clouddn.com/VIM%20IDE1.jpg)
+![VIM IDE](VIM%20IDE1.jpg)
 
 ## exVim
 * 安装exVim，与原来自定义Vim环境不冲突；
