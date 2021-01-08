@@ -28,16 +28,16 @@ On the way
 * 安装exVim，与原来自定义Vim环境不冲突；
 * 配置exVim为系统命令，可以通过exVim+*.exvim工程文件的形式,一键打开exVim，并自动进入指定的工程目录；
 * 关闭exVim，即恢复系统配置，不影响原来自定义Vim环境的使用。
-![exVim IDE](http://7xoae4.com1.z0.glb.clouddn.com/exVim1.jpg)
+![exVim IDE](exVim1.jpg)
 
 ## Dir_colors
 * 配置系统显示目录和文件时的颜色主题。
-![Dir_colors](http://7xoae4.com1.z0.glb.clouddn.com/dir_colors2.jpg)
+![Dir_colors](dir_colors2.jpg)
 
 ## Oh-my-zsh:
 * 安装oh-my-zsh，自定义颜色主题配置，将路径信息显示在最右侧。
-![Oh-my-zsh](http://7xoae4.com1.z0.glb.clouddn.com/oh-my-zsh1.jpg)
+![Oh-my-zsh](oh-my-zsh1.jpg)
 
 ## Z
 * 实现快速路径跳转。
-![Z](http://7xoae4.com1.z0.glb.clouddn.com/Z1.jpg)
+![Z](Z1.jpg)
