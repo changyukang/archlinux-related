@@ -12,7 +12,7 @@ On the way
 ## Dotfiles
 * 相关配置均使用dotfiles方式保存；
 * 在dotfiles文件夹中增加脚本，一键恢复需要的链接到~目录。
-![Dotfiles](dotfiles1.jpg)
+![Dotfiles](README/dotfiles1.jpg)
 
 ## Vim
 * 使用Vundle安装插件；
@@ -22,22 +22,22 @@ On the way
 * 安装YCM，实现精确语义解析和语法补全；
 * 已经集成其它插件，打造成IDE环境；
 * 使用solarized主题。
-![VIM IDE](VIM%20IDE1.jpg)
+![VIM IDE](README/VIM%20IDE1.jpg)
 
 ## exVim
 * 安装exVim，与原来自定义Vim环境不冲突；
 * 配置exVim为系统命令，可以通过exVim+*.exvim工程文件的形式,一键打开exVim，并自动进入指定的工程目录；
 * 关闭exVim，即恢复系统配置，不影响原来自定义Vim环境的使用。
-![exVim IDE](exVim1.jpg)
+![exVim IDE](README/exVim1.jpg)
 
 ## Dir_colors
 * 配置系统显示目录和文件时的颜色主题。
-![Dir_colors](dir_colors2.jpg)
+![Dir_colors](README/dir_colors2.jpg)
 
 ## Oh-my-zsh:
 * 安装oh-my-zsh，自定义颜色主题配置，将路径信息显示在最右侧。
-![Oh-my-zsh](oh-my-zsh1.jpg)
+![Oh-my-zsh](README/oh-my-zsh1.jpg)
 
 ## Z
 * 实现快速路径跳转。
-![Z](Z1.jpg)
+![Z](README/Z1.jpg)
