@@ -12,7 +12,7 @@ On the way
 ## Dotfiles
 * 相关配置均使用dotfiles方式保存；
 * 在dotfiles文件夹中增加脚本，一键恢复需要的链接到~目录。
-![Dotfiles](http://7xoae4.com1.z0.glb.clouddn.com/dotfiles1.jpg)
+![Dotfiles](dotfiles1.jpg)
 
 ## Vim
 * 使用Vundle安装插件；
